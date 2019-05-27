@@ -18,11 +18,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	
-	<link href="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/air-datepicker/css/datepicker.min.css" rel="stylesheet" type="text/css">
-	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/air-datepicker/js/datepicker.min.js"></script>
+	<link href="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/datepicker.min.js"></script>
 
 	<!-- Include English language -->
-	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/air-datepicker/js/i18n/datepicker.en.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/i18n/datepicker.en.js"></script>
 	
 	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js"></script>
 
