@@ -464,6 +464,8 @@ add_shortcode( 'api_youneed_asociado', 'api_youneed_asociado' );
 function api_youneed_contratar(){
 
     $user = null;
+    $servicio_id = null;
+    $asociado_id = null;
 
     if(isset($_SESSION["api_userdata"])) {
         $user = $_SESSION["api_userdata"];
@@ -473,22 +475,27 @@ function api_youneed_contratar(){
     }
 
     $out = '';
-    // echo "<p>POST</p><pre>";
-    // var_dump($_POST);
-    // echo "</pre>";
-    // echo "<p>data</p><pre>";
-    // var_dump($data);
-    // echo "</pre>";
-    // echo "<p>user</p><pre>";
-    // var_dump($user);
-    // echo "</pre>";
 
-    if($user && isset($_POST)){
+    
+    if(isset($_SESSION["pedido_asociado_id"]) && isset($_SESSION["pedido_servicio_id"])){
+        $asociado_id = $_SESSION["pedido_asociado_id"];
+        $servicio_id = $_SESSION["pedido_servicio_id"];
+    }else if(isset($_POST["asociado_id"]) && isset($_POST["servicio_id"])){
 
-        $srvID =  $_POST["servicio_id"] ;
-            
+        $asociado_id = $_POST["asociado_id"];
+        $servicio_id = $_POST["servicio_id"];
+        
+        $_SESSION["pedido_asociado_id"] = $_POST["asociado_id"];
+        $_SESSION["pedido_servicio_id"] = $_POST["servicio_id"];
+
+    }else{
+        return $out;
+    }
+
+    if($user){
+
         $data = array (
-            'serviceID' => $srvID
+            'serviceID' => $servicio_id
         );
         
         $params = '';
@@ -526,10 +533,10 @@ function api_youneed_contratar(){
         $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
             
-                $out .= '<input id="asociado_id" type="hidden" name="Pedido[asociado_id]" value="' . $_POST["asociado_id"] . '">';
-                $out .= '<input id="cliente_id" type="hidden" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
-                $out .= '<input id="servicio_id" type="hidden" name="Pedido[servicio_id]" value="' . $_POST["servicio_id"] . '">';
-                $out .= '<input id="valor_total" type="hidden" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
+                $out .= '<input id="asociado_id" type="text" name="Pedido[asociado_id]" value="' . $asociado_id . '">';
+                $out .= '<input id="cliente_id" type="text" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
+                $out .= '<input id="servicio_id" type="text" name="Pedido[servicio_id]" value="' . $servicio_id . '">';
+                $out .= '<input id="valor_total" type="text" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
             
             // AGREGAR COORDENADAS DE API GEOREFERENCIAL !!!!!
 			// $out .= '<input id="georeferencia" type="hidden" name="georeferencia" value="' . $_POST["servicio_id"] . '">';
