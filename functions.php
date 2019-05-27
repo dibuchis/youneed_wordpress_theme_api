@@ -373,7 +373,7 @@ function api_youneed_asociado(){
         $out .= '<h2>Asociado</h2>';
         $out .= '<hr>';
         $out .= '<div class="panel-asociado">';
-        $out .= '<form id="contratar-asociado">';
+        $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
 			$out .= '<input id="asociado_id" type="hidden" name="asociado_id" value="' . $asociado->id . '">';
 			$out .= '<input id="cliente_id" type="hidden" name="cliente_id" value="' . $data->usuario->id . '">';
@@ -417,7 +417,7 @@ function api_youneed_asociado(){
                 
                 $out .= '<div class="meta meta-link">';
                     $out .= '<a class="ver-asociados btn-asociados btn-cancelar" href="javascript:history.back()">Cancelar</a>';
-                    $out .= '<a class="ver-asociados btn-asociados" onclick="contratarAsociado(event)" href="#">Contratar</a>';
+                    $out .= '<input type="submit" class="ver-asociados btn-asociados" value="Contratar" >';
                 $out .= '</div>';
             $out .= '</div>';
             
@@ -453,6 +453,121 @@ function api_youneed_asociado(){
 }
 add_shortcode( 'api_youneed_asociado', 'api_youneed_asociado' );
 
+/**
+ *
+ * API - YouNeed
+ * MOSTRAR DATOS ASOCIADO
+ * 
+ */
+function api_youneed_contratar(){
+
+    $user = null;
+
+    if(isset($_SESSION["api_userdata"])) {
+        $data = $_SESSION["api_userdata"];
+        $user = json_encode($data);
+        //echo "USAURIO";
+
+    }
+
+    $out = '';
+
+    if($user && isset($_POST)){
+
+        $srvID =  $_POST["servicio_id"] ;
+            
+        $data = array (
+            'serviceID' => $srvID
+        );
+        
+        $params = '';
+            foreach($data as $key=>$value)
+            $params .= $key.'='.$value.'&';
+        
+        $params = trim($params, '&');
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/getservicio');
+
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Return data instead printing directly in Browser
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); //Timeout after 7 seconds
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)");
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+        
+        //We add these 2 lines to create POST request
+        curl_setopt($ch, CURLOPT_POST, count($data)); //number of parameters sent
+        
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $params); //parameters data
+
+        $dataRes = curl_exec($ch);
+
+        curl_close($ch);
+        
+        
+
+        //$out['login'] = true;
+
+        $servicio = json_encode($dataRes);
+
+        $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><form class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
+        $out .= '<h2>Checkout</h2>';
+        $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
+			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
+            
+            $out .= '<input id="asociado_id" type="text" name="Pedido[asociado_id]" value="' . $_POST["asociado_id"] . '">';
+			$out .= '<input id="cliente_id" type="text" name="Pedido[cliente_id]" value="' . $data->usuario->id . '">';
+			$out .= '<input id="servicio_id" type="text" name="Pedido[servicio_id]" value="' . $_POST["servicio_id"] . '">';
+			$out .= '<input id="valor_total" type="text" name="Pedido[total]" value="' . $servicio->total . '">';
+            
+            // AGREGAR COORDENADAS DE API GEOREFERENCIAL !!!!!
+			// $out .= '<input id="georeferencia" type="hidden" name="georeferencia" value="' . $_POST["servicio_id"] . '">';
+
+            $out .= '<table>';
+                $out .= '<tr>';
+                    $out .= '<td><label>Fecha del servicio</label><input id="Pedido[fecha_para_servicio]" type="date" name="fecha_servicio" ></td>';
+                    $out .= '<td><label>Hora del servicio</label><input id="Pedido[fecha_para_servicio]" type="date" name="hora_servicio" ></td>';
+                $out .= '</tr>';
+                
+                $out .= '<tr>';
+                    $out .= '<th></th>';
+                    $out .= '<th>Código</th>';
+                    $out .= '<th>Descripción</th>';
+                    $out .= '<th>Incluye</th>';
+                    $out .= '<th>No Incluye</th>';
+                    $out .= '<th>Valor</th>';
+                $out .= '</th>';
+                
+                $out .= '<tr>';
+                    $out .= '<td><img src="' . $servicio->imagen .'" alt="' . $servicio->nombre . '"></td>';
+                    $out .= '<td>' . $servicio->id .'</td>';
+                    $out .= '<td>' . $servicio->nombre .'</td>';
+                    $out .= '<td>' . $servicio->incluye .'</td>';
+                    $out .= '<td>' . $servicio->no_incluye .'</td>';
+                    $out .= '<td>' . $servicio->total .'</td>';
+                $out .= '</th>';
+            $out .= '</table>';
+            
+            $out .= '<a onclick="contratarAsociado(event)" href="#">Contratar</a>';
+        $out .= '</form>';
+        $out .= '</div>';
+        $out .= '</div>';
+        $out .= '</div>';
+    }else{
+        $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: #f3f3f3;background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
+        $out .= '<h2>Acceso para usuarios</h2>';
+        $out .= '<p>Por favor inicie sesión antes de continuar.</p>';
+        $out .= '<a class="menu-text fusion-button button-default button-small btn-trigger-login" href="#">Ingresar</a>';
+        $out .= '<h3>¿No tienes cuenta?</h3>';
+        $out .= '<a href="https://youneed.com.ec/registro_escoger/">Registrate</a>';
+        $out .= '</div>';
+        $out .= '</div>';
+        $out .= '</div>';
+    }
+    
+    return $out;
+}
+add_shortcode( 'api_youneed_contratar', 'api_youneed_contratar' );
 
 /**
  *
