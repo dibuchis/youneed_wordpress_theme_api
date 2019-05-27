@@ -522,14 +522,14 @@ function api_youneed_contratar(){
 
         //$out['login'] = true;
 
-        $_servicio = json_encode($dataRes);
+        $_servicio = json_decode($dataRes);
 
         echo "<div class='hidden'>";
         echo "<p>dataRes</p><pre>";
         var_dump($dataRes);
         echo "</pre>";
         echo "<p>servicio</p><pre>";
-        var_dump($servicio);
+        var_dump($_servicio);
         echo "</pre>";
         echo "</div>";
 
