@@ -471,15 +471,15 @@ function api_youneed_contratar(){
     }
 
     $out = '';
-    echo "<p>POST</p><pre>"
+    echo "<p>POST</p><pre>";
     var_dump($_POST);
-    echo "</pre>"
-    echo "<p>data</p><pre>"
+    echo "</pre>";
+    echo "<p>data</p><pre>";
     var_dump($data);
-    echo "</pre>"
-    echo "<p>user</p><pre>"
+    echo "</pre>";
+    echo "<p>user</p><pre>";
     var_dump($user);
-    echo "</pre>"
+    echo "</pre>";
 
     if($user && isset($_POST)){
 
