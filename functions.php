@@ -525,12 +525,12 @@ function api_youneed_contratar(){
         $_servicio = json_decode($dataRes);
 
         echo "<div class='hidden'>";
-        echo "<p>dataRes</p><pre>";
-        var_dump($dataRes);
-        echo "</pre>";
-        echo "<p>servicio</p><pre>";
-        var_dump($_servicio);
-        echo "</pre>";
+            echo "<p>dataRes</p><pre>";
+            var_dump($dataRes);
+            echo "</pre>";
+            echo "<p>servicio</p><pre>";
+            var_dump($_servicio);
+            echo "</pre>";
         echo "</div>";
 
         $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><form class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
