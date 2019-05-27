@@ -461,7 +461,7 @@ add_shortcode( 'api_youneed_asociado', 'api_youneed_asociado' );
 /**
  *
  * API - YouNeed
- * MOSTRAR DATOS ASOCIADO
+ * CONTRATAR ASOCIADO
  * 
  */
 function api_youneed_contratar(){
