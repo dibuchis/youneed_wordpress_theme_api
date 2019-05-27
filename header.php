@@ -18,15 +18,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	
-	<link href="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
-	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/datepicker.min.js"></script>
-
-	<!-- Include English language -->
-	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/i18n/datepicker.en.js"></script>
-	
-	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js"></script>
-
-	
 	<script>
 	function addEvent(elm, evType, fn) {
         if (elm.addEventListener) {
@@ -80,6 +71,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	echo apply_filters( 'avada_google_analytics', Avada()->settings->get( 'google_analytics' ) ); // WPCS: XSS ok.
 	echo apply_filters( 'avada_space_head', Avada()->settings->get( 'space_head' ) ); // WPCS: XSS ok.
 	?>
+
+	<link href="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
+	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/datepicker.min.js"></script>
+
+	<!-- Include English language -->
+	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/i18n/datepicker.en.js"></script>
+	
+	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js"></script>
 </head>
     <!-- LOGIN -->
     <div class="apilogin-wrapper" id="yn-login">
