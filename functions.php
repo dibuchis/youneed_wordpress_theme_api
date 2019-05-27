@@ -376,7 +376,7 @@ function api_youneed_asociado(){
         $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
 			$out .= '<input id="asociado_id" type="hidden" name="asociado_id" value="' . $asociado->id . '">';
-			$out .= '<input id="cliente_id" type="hidden" name="cliente_id" value="' . $data->usuario->id . '">';
+			$out .= '<input id="cliente_id" type="hidden" name="cliente_id" value="' . $user->usuario->id . '">';
 			$out .= '<input id="servicio_id" type="hidden" name="servicio_id" value="' . $srv_id . '">';
             $out .= '<div class="left-panel">';
                 $out .= '<img class="asociado-vista-img" src="' . $asociado->imagen . '">';
@@ -516,7 +516,7 @@ function api_youneed_contratar(){
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
             
             $out .= '<input id="asociado_id" type="text" name="Pedido[asociado_id]" value="' . $_POST["asociado_id"] . '">';
-			$out .= '<input id="cliente_id" type="text" name="Pedido[cliente_id]" value="' . $data->usuario->id . '">';
+			$out .= '<input id="cliente_id" type="text" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
 			$out .= '<input id="servicio_id" type="text" name="Pedido[servicio_id]" value="' . $_POST["servicio_id"] . '">';
 			$out .= '<input id="valor_total" type="text" name="Pedido[total]" value="' . $servicio->total . '">';
             
