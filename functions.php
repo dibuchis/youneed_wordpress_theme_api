@@ -541,12 +541,16 @@ function api_youneed_contratar(){
             // AGREGAR COORDENADAS DE API GEOREFERENCIAL !!!!!
 			// $out .= '<input id="georeferencia" type="hidden" name="georeferencia" value="' . $_POST["servicio_id"] . '">';
 
-            $out .= '<table>';
+            $fecha_actual = date("Y/m/d H:i");
+
+            $out .= '<table class="table-2">';
                 $out .= '<tr>';
-                    $out .= '<td><label>Fecha del servicio</label><input id="Pedido[fecha_para_servicio]" type="date" name="fecha_servicio" ></td>';
-                    $out .= '<td><label>Hora del servicio</label><input id="Pedido[fecha_para_servicio]" type="date" name="hora_servicio" ></td>';
+                $out .= '<td><label>Fecha del servicio</label><input id="Pedido[fecha_para_servicio]" type="text" id="fecha_servicio" name="fecha_servicio" ></td>';
+                $out .= '<td><label>Fecha del servicio</label><div class="datepicker-here"></div> <div id="fecha_servicio_content"></div></td>';
                 $out .= '</tr>';
-                
+            $out .= '</table>';
+            
+            $out .= '<table class="table-1">';
                 $out .= '<tr>';
                     $out .= '<th></th>';
                     $out .= '<th>Código</th>';
@@ -557,12 +561,12 @@ function api_youneed_contratar(){
                 $out .= '</th>';
                 
                 $out .= '<tr>';
-                    $out .= '<td><img src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
-                    $out .= '<td>' . $_servicio->servicio->id .'</td>';
-                    $out .= '<td>' . $_servicio->servicio->nombre .'</td>';
-                    $out .= '<td>' . $_servicio->servicio->incluye .'</td>';
-                    $out .= '<td>' . $_servicio->servicio->no_incluye .'</td>';
-                    $out .= '<td>' . $_servicio->servicio->total .'</td>';
+                    $out .= '<td class="checkot_meta"><img src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
+                    $out .= '<td class="checkot_meta">' . $_servicio->servicio->id .'</td>';
+                    $out .= '<td class="checkot_meta">' . $_servicio->servicio->nombre .'</td>';
+                    $out .= '<td class="checkot_meta meta-mini">' . $_servicio->servicio->incluye .'</td>';
+                    $out .= '<td class="checkot_meta meta-mini">' . $_servicio->servicio->no_incluye .'</td>';
+                    $out .= '<td class="checkot_meta">' . $_servicio->servicio->total .'</td>';
                 $out .= '</th>';
             $out .= '</table>';
             

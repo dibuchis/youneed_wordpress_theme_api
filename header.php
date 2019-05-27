@@ -18,6 +18,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	
+	<link href="lib/air-datepicker/css/datepicker.min.css" rel="stylesheet" type="text/css">
+	<script src="lib/air-datepicker/js/datepicker.min.js"></script>
+
+	<!-- Include English language -->
+	<script src="lib/air-datepicker/js/i18n/datepicker.en.js"></script>
+	
+	<script src="lib/main.js"></script>
+
+	
 	<script>
 	function addEvent(elm, evType, fn) {
         if (elm.addEventListener) {
