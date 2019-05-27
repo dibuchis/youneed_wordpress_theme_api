@@ -517,14 +517,14 @@ function api_youneed_contratar(){
 
         //$out['login'] = true;
 
-        $servicio = json_encode($dataRes);
+        $_servicio = json_encode($dataRes);
 
-        echo "<p>dataRes</p><pre>";
-        var_dump($dataRes);
-        echo "</pre>";
-        echo "<p>servicio</p><pre>";
-        var_dump($servicio);
-        echo "</pre>";
+        // echo "<p>dataRes</p><pre>";
+        // var_dump($dataRes);
+        // echo "</pre>";
+        // echo "<p>servicio</p><pre>";
+        // var_dump($servicio);
+        // echo "</pre>";
 
         $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><form class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         $out .= '<h2>Checkout</h2>';
@@ -534,7 +534,7 @@ function api_youneed_contratar(){
             $out .= '<input id="asociado_id" type="text" name="Pedido[asociado_id]" value="' . $_POST["asociado_id"] . '">';
 			$out .= '<input id="cliente_id" type="text" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
 			$out .= '<input id="servicio_id" type="text" name="Pedido[servicio_id]" value="' . $_POST["servicio_id"] . '">';
-			$out .= '<input id="valor_total" type="text" name="Pedido[total]" value="' . $servicio->total . '">';
+			$out .= '<input id="valor_total" type="text" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
             
             // AGREGAR COORDENADAS DE API GEOREFERENCIAL !!!!!
 			// $out .= '<input id="georeferencia" type="hidden" name="georeferencia" value="' . $_POST["servicio_id"] . '">';
@@ -555,12 +555,12 @@ function api_youneed_contratar(){
                 $out .= '</th>';
                 
                 $out .= '<tr>';
-                    $out .= '<td><img src="' . $servicio->imagen .'" alt="' . $servicio->nombre . '"></td>';
-                    $out .= '<td>' . $servicio->id .'</td>';
-                    $out .= '<td>' . $servicio->nombre .'</td>';
-                    $out .= '<td>' . $servicio->incluye .'</td>';
-                    $out .= '<td>' . $servicio->no_incluye .'</td>';
-                    $out .= '<td>' . $servicio->total .'</td>';
+                    $out .= '<td><img src="' . $_servicio->$servicio->imagen .'" alt="' . $_servicio->$servicio->nombre . '"></td>';
+                    $out .= '<td>' . $_servicio->servicio->id .'</td>';
+                    $out .= '<td>' . $_servicio->$servicio->nombre .'</td>';
+                    $out .= '<td>' . $_servicio->$servicio->incluye .'</td>';
+                    $out .= '<td>' . $_servicio->$servicio->no_incluye .'</td>';
+                    $out .= '<td>' . $_servicio->$servicio->total .'</td>';
                 $out .= '</th>';
             $out .= '</table>';
             
