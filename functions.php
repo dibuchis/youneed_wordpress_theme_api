@@ -545,7 +545,7 @@ function api_youneed_contratar(){
 
             $out .= '<table class="table-2">';
                 $out .= '<tr>';
-                $out .= '<td><div class="container"><div class="col-sm-6" style="height:130px;"><div class="form-group"><div class="input-group date" id="datetimepicker12"><input type="text" class="form-control" /><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div></div></div></div></td>';
+                $out .= '<td><div class="container"><div class="col-sm-6"><div class="form-group"><div class="input-group date" id="datetimepicker12"><input type="text" class="form-control" /><span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span></div></div></div></div></td>';
                 $out .= '<script>jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true });</script>';
                 $out .= '<td><label>Fecha del servicio</label><input id="Pedido[fecha_para_servicio]" type="text" id="fecha_servicio" name="fecha_servicio" ><div id="fecha_servicio_content"></div></td>';
                 $out .= '</tr>';
