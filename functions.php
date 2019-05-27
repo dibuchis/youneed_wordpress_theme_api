@@ -472,6 +472,10 @@ function api_youneed_contratar(){
 
     $out = '';
 
+    var_dump($_POST);
+    var_dump($data);
+    var_dump($user);
+
     if($user && isset($_POST)){
 
         $srvID =  $_POST["servicio_id"] ;
@@ -500,7 +504,7 @@ function api_youneed_contratar(){
         
         curl_setopt($ch, CURLOPT_POSTFIELDS, $params); //parameters data
 
-        $dataRes = curl_exec($ch);
+        $servicio = curl_exec($ch);
 
         curl_close($ch);
         
@@ -508,7 +512,7 @@ function api_youneed_contratar(){
 
         //$out['login'] = true;
 
-        $servicio = json_encode($dataRes);
+        //$servicio = json_encode($dataRes);
 
         $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><form class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         $out .= '<h2>Checkout</h2>';
