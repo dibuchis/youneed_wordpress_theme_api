@@ -376,13 +376,10 @@ function api_youneed_asociado(){
         $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
             //$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
             
-            $out .= "<div class='hidden'>";
-                $out .= '<input id="asociado_id" type="text" name="asociado_id" value="' . $asociado->id . '">';
-                $out .= '<input id="cliente_id" type="text" name="cliente_id" value="' . $user->usuario->id . '">';
-                $out .= '<input id="servicio_id" type="text" name="servicio_id" value="' . $srv_id . '">';
-            $out .= '</div>';
-            
-
+                $out .= '<input id="asociado_id" type="hidden" name="asociado_id" value="' . $asociado->id . '">';
+                $out .= '<input id="cliente_id" type="hidden" name="cliente_id" value="' . $user->usuario->id . '">';
+                $out .= '<input id="servicio_id" type="hidden" name="servicio_id" value="' . $srv_id . '">';
+   
             $out .= '<div class="left-panel">';
                 $out .= '<img class="asociado-vista-img" src="' . $asociado->imagen . '">';
             $out .= '</div>';
@@ -524,26 +521,15 @@ function api_youneed_contratar(){
 
         $_servicio = json_decode($dataRes);
 
-        echo "<div class='hidden'>";
-            echo "<p>dataRes</p><pre>";
-            var_dump($dataRes);
-            echo "</pre>";
-            echo "<p>servicio</p><pre>";
-            var_dump($_servicio);
-            echo "</pre>";
-        echo "</div>";
-
         $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><form class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         $out .= '<h2>Checkout</h2>';
         $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
             
-            $out .= "<div class='hidden'>";
-                $out .= '<input id="asociado_id" type="text" name="Pedido[asociado_id]" value="' . $_POST["asociado_id"] . '">';
-                $out .= '<input id="cliente_id" type="text" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
-                $out .= '<input id="servicio_id" type="text" name="Pedido[servicio_id]" value="' . $_POST["servicio_id"] . '">';
-                $out .= '<input id="valor_total" type="text" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
-            $out .= "</div>";
+                $out .= '<input id="asociado_id" type="hidden" name="Pedido[asociado_id]" value="' . $_POST["asociado_id"] . '">';
+                $out .= '<input id="cliente_id" type="hidden" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
+                $out .= '<input id="servicio_id" type="hidden" name="Pedido[servicio_id]" value="' . $_POST["servicio_id"] . '">';
+                $out .= '<input id="valor_total" type="hidden" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
             
             // AGREGAR COORDENADAS DE API GEOREFERENCIAL !!!!!
 			// $out .= '<input id="georeferencia" type="hidden" name="georeferencia" value="' . $_POST["servicio_id"] . '">';
@@ -566,10 +552,10 @@ function api_youneed_contratar(){
                 $out .= '<tr>';
                     $out .= '<td><img src="' . $_servicio->$servicio->imagen .'" alt="' . $_servicio->$servicio->nombre . '"></td>';
                     $out .= '<td>' . $_servicio->servicio->id .'</td>';
-                    $out .= '<td>' . $_servicio->$servicio->nombre .'</td>';
-                    $out .= '<td>' . $_servicio->$servicio->incluye .'</td>';
-                    $out .= '<td>' . $_servicio->$servicio->no_incluye .'</td>';
-                    $out .= '<td>' . $_servicio->$servicio->total .'</td>';
+                    $out .= '<td>' . $_servicio->servicio->nombre .'</td>';
+                    $out .= '<td>' . $_servicio->servicio->incluye .'</td>';
+                    $out .= '<td>' . $_servicio->servicio->no_incluye .'</td>';
+                    $out .= '<td>' . $_servicio->servicio->total .'</td>';
                 $out .= '</th>';
             $out .= '</table>';
             
