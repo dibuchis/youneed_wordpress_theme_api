@@ -550,7 +550,7 @@ function api_youneed_contratar(){
                 $out .= '</th>';
                 
                 $out .= '<tr>';
-                    $out .= '<td><img src="' . $_servicio->$servicio->imagen .'" alt="' . $_servicio->$servicio->nombre . '"></td>';
+                    $out .= '<td><img src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
                     $out .= '<td>' . $_servicio->servicio->id .'</td>';
                     $out .= '<td>' . $_servicio->servicio->nombre .'</td>';
                     $out .= '<td>' . $_servicio->servicio->incluye .'</td>';
