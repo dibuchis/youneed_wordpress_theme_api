@@ -71,12 +71,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	echo apply_filters( 'avada_google_analytics', Avada()->settings->get( 'google_analytics' ) ); // WPCS: XSS ok.
 	echo apply_filters( 'avada_space_head', Avada()->settings->get( 'space_head' ) ); // WPCS: XSS ok.
 	?>
-
+	<?php /*
 	<link href="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/css/datepicker.min.css" rel="stylesheet" type="text/css">
 	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/datepicker.min.js"></script>
 
 	<!-- Include English language -->
-	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/i18n/datepicker.en.js"></script>
+	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/i18n/datepicker.en.js"></script>*/ 
+	?>
+
+	<link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
+	<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
 	
 	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js"></script>
 </head>
