@@ -197,7 +197,7 @@ function api_youneed_asociados(){
         $dataAsoc = curl_exec($ch);    
         curl_close($ch);
         
-        $servicio = json_decode($dataAsoc);
+        $_servicio = json_decode($dataAsoc);
         
         $_SESSION['servicio_id'] = $srv_id;
         $_SESSION['categoria_actual'] = $_servicio->servicio->cat_id;
@@ -234,8 +234,7 @@ function api_youneed_asociados(){
     
     if($asoc){
         
-        $out = '<div class="catalogo-asociados" id="asociados-youneed">';    
-        $out .= $_SESSION['servicio_id'];    
+        $out = '<div class="catalogo-asociados" id="asociados-youneed">';
         //$out .= '<h2>Listado de Servicios</h2>';  
         
         foreach ($asoc as $key => $value) {
