@@ -794,7 +794,7 @@ function api_youneed_filtro_servicio(){
     
     $ch = curl_init();
     
-    curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $categoria_actual);
+    curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $categoria_actual . "&ordenado=true");
     
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     
