@@ -94,18 +94,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 			
 		}
 
-	}
+	});
 		
 	
-    (function($){
-        $("#yn-login").click(function(event){ 
+    
+        jQuery("#yn-login").click(function(event){ 
             if(event.target.id=="yn-login"){
-                if($("#yn-login").hasClass("yn-login")){  
-                    $("#yn-login").removeClass("yn-login");
+                if(jQuery("#yn-login").hasClass("yn-login")){  
+                    jQuery("#yn-login").removeClass("yn-login");
                 } 
             }
         });
-    })(jQuery);
 </script>
 
 </html>
