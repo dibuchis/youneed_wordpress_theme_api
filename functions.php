@@ -578,8 +578,9 @@ function api_youneed_contratar(){
                     $out .= '<td class="checkot_meta meta-mini">' . $_servicio->servicio->incluye .'</td>';
                     $out .= '<td class="checkot_meta meta-mini">' . $_servicio->servicio->no_incluye .'</td>';
                     $out .= '<td class="checkot_meta">' . $_servicio->servicio->total .'</td>';
-                $out .= '</th>';
+                $out .= '</tr>';
             $out .= '</table>';
+            
             $out .= '<hr>';
             
             $out .= '<a class="ver-asociados btn-asociados" onclick="contratarAsociado(event)" href="#">Contratar</a>';
