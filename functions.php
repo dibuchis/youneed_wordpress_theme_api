@@ -770,7 +770,7 @@ function api_youneed_filtro_servicio(){
         $categoria_actual = $_SESSION['categoria_actual'];
     }
     
-    if(isset($_SESSION['servicio_id']) && !isset($_SESSION['filtro-servicio'])){
+    if(isset($_SESSION['servicio_id']) && !wp_doing_ajax()){
         $servicio_actual = $_SESSION['servicio_id'];
     }
     
