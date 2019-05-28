@@ -793,7 +793,7 @@ function api_youneed_filtro_servicio(){
     }
     
     if(isset($_REQUEST['categoria'])){
-        $categoria_actual = $_POST['categoria'];
+        $categoria_actual = $_REQUEST['categoria'];
     }
 
     $ch = curl_init();

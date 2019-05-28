@@ -92,7 +92,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 				url: "https://youneed.com.ec/wp-admin/admin-ajax.php",
 				data: {
 					action: 'api_youneed_filtro_servicio',
-					servicio :  jQuery("#filtro-categoria-data").val()
+					categoria :  jQuery("#filtro-categoria-data").val()
 				},
 				success: function( data ) {
 					jQuery('#widget-filtro-servicio').html(data);
