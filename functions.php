@@ -463,7 +463,7 @@ add_shortcode( 'api_youneed_asociado', 'api_youneed_asociado' );
  */
 function api_youneed_contratar(){
 
-    wp_register_style('bootstrap', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/bootstrap.min.css');
+    wp_register_style('bootstrap', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/css/bootstrap.min.css');
     wp_enqueue_style( 'bootstrap' );
 
     $user = null;
