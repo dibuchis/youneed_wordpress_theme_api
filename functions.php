@@ -830,7 +830,7 @@ function api_youneed_filtro_servicio(){
     $text .= '</form>';
     $text .= '</div>';
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])){
-        echo $text;
+        echo json_encode($text);
         exit();
     }else{
         return $text;
