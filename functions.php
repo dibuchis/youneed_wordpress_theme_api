@@ -726,18 +726,14 @@ function api_youneed_filtro_ciudades(){
 }
 add_shortcode( 'api_youneed_filtro_ciudades', 'api_youneed_filtro_ciudades' );
 
-function api_youneed_filtro_categoria($atts = [], $content = null, $tag = ''){
+function api_youneed_filtro_categoria($atts){
 
-        // normalize attribute keys, lowercase
-        $atts = array_change_key_case((array)$atts, CASE_LOWER);
-        
-        // override default attributes with user attributes
-        $wporg_atts = shortcode_atts([
+        $a = shortcode_atts( array(
             'ajax' => false,
-        ], $atts, $tag);
+        ), $atts );
 
         $text = "<div class='filtro-wrapper'>"; 
-        $text .= "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
+        $text .= "<h3 class='filtro-titulo'><b>Categortía{$a['foo']}</b></h3>"; 
         $ch = curl_init();
         $categoria_actual = 0;
 
@@ -771,7 +767,7 @@ function api_youneed_filtro_categoria($atts = [], $content = null, $tag = ''){
             }
         $text .= '</select>';
         
-        if($wporg_atts['ajax']){
+        if($a['ajax']){
             $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" id="filtroCategoriaAjax" onclick="loadServiciosFilter()">Filtrar</a>';
         }else{
             $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
