@@ -224,6 +224,12 @@ span.user-name {
 .btn-cancelar{
     background-color:#e6a13e !important;
 }
+.btn-small{
+  font-size:0.8em;
+  width:80px;
+  height:30px;
+  padding:5px;
+}
 .left-panel{
   display:inline-block;
   position:relative;
@@ -320,12 +326,6 @@ padding:20px;
   width:100%;
   display:block;
   margin:0px;
-}
-.btn-small{
-  font-size:0.8em;
-  width:80px;
-  height:30px;
-  padding:5px;
 }
 
 .meta-nombre-asociado{
