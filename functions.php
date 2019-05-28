@@ -536,6 +536,21 @@ function api_youneed_contratar(){
 
         $_servicio = json_decode($dataRes);
 
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/verasociado?aso_id=' . $asociado_id . '&api_token=8e705fdb6ed22df72e4fcbeb37bcf517');
+    
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+         
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+         
+        $dataAsoc = curl_exec($ch);
+    
+        curl_close($ch);
+        
+        $asociado = json_decode($dataAsoc);
+
         $out = '<div id="panel-asociado" class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;">';
         $out .= '<div class="fusion-builder-row fusion-row ">';
         $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
@@ -552,11 +567,35 @@ function api_youneed_contratar(){
                 
             $out .= '<label>Método de pago </label>';
             $out .= '<select id="metodo_de_pago" name="Pedido[metodo_de_pago]" >';
-                $out .= '<option value="tarjeta">Tarjeta de Crédito</option>';
-                $out .= '<option value="efectivo">Efectivo</option>';
-                $out .= '<option value="deposito">Depósito</option>';
-                $out .= '<option value="transferencia">Transferencia</option>';
+            $out .= '<option value="tarjeta">Tarjeta de Crédito</option>';
+            $out .= '<option value="efectivo">Efectivo</option>';
+            $out .= '<option value="deposito">Depósito</option>';
+            $out .= '<option value="transferencia">Transferencia</option>';
             $out .= '</select>';
+            
+            $out .= '<label>Datos del Profesional </label>';
+            $out .= '<div><img src="' . $asociado->imagen . '"> </div>';
+            $out .= '<table class="checkout-asoc-table" style="margin-bottom:35px;">';
+            $out .= '<tbody>';
+                $out .= '<tr>';
+                    $out .= '<td rowspan="2"><img width="80" src="' . $asociado->imagen . '"> </td>';
+                    $out .= '<td>Código</td>';
+                    $out .= '<td>Nombre</td>';
+                    $out .= '<td>Apellido</td>';
+                    $out .= '<td>Ubicación</d>';
+                    $out .= '<td>Calificación</d>';
+                $out .= '</tr>';
+                $out .= '<tr>';
+                    $out .= '<td></td>';
+                    $out .= '<td>' . $asociado->id . '</td>';
+                    $out .= '<td>' . $asociado->nombres . '</td>';
+                    $out .= '<td>' . $asociado->apellidos . '</d>';
+                    $out .= '<td>' . $asociado->nombres . '</d>';
+                    $out .= '<td><div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></d>';
+                $out .= '</tr>';
+            $out .= '</tbody>';
+            $out .= '</table>';
+            
             // AGREGAR COORDENADAS DE API GEOREFERENCIAL !!!!!
 			// $out .= '<input id="georeferencia" type="hidden" name="georeferencia" value="' . $_POST["servicio_id"] . '">';
 
@@ -571,13 +610,15 @@ function api_youneed_contratar(){
             $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
             $out .= '<h2><center>Datos de Servicio</center></h2>';
             $out .= '<table class="table-1 checkout-table"  style="margin-bottom:35px;">';
-                $out .= '<tbody>';
+                $out .= '<thead>';
                     $out .= '<tr>';
                         $out .= '<th></th>';
                         $out .= '<th>Código</th>';
                         $out .= '<th>Descripción</th>';
                         $out .= '<th>Valor</th>';
                     $out .= '</tr>';
+                $out .= '</thead>';
+                    $out .= '<tbody>';
                     $out .= '<tr>';
                         $out .= '<td class="checkout_meta"><img width="50" src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
                         $out .= '<td class="checkout_meta">' . $_servicio->servicio->id .'</td>';
