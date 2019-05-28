@@ -469,7 +469,7 @@ padding:20px;
   border-radius: 5px;
 }
 .checkout-table tbody tr td:nth-child(1){
-  width:5%;
+  width:10%;
 }
 .checkout-table tbody tr td:nth-child(2){
   width:10%;
