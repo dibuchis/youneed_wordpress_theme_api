@@ -544,7 +544,7 @@ function api_youneed_contratar(){
             $fecha_actual = date("Y/m/d H:i");
 
             $out .= '<div style="overflow:hidden;"><div class="form-group"><div class="row"><div class="col-md-8"><div id="datetimepicker12"></div></div></div></div>';
-            $out .= '<script>//jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true });</script>';
+            $out .= '<script>jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true });</script>';
             $out .= '</div>';
 
             $out .= '<table class="table-2">';
