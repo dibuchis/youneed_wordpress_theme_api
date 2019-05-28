@@ -89,6 +89,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 	<script>
 		function loadServiciosFilter(){
+		
+		jQuery("#main").LoadingOverlay("show", {maxSize: 70 });
+		
+		
 		var cat = jQuery("#filtro-categoria-data").val();
 
 			jQuery.ajax({
@@ -100,6 +104,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				},
 				success: function( data ) {
 					jQuery('#widget-filtro-servicio').html(data);
+					jQuery("#main").LoadingOverlay("hide");
+				},
+				error: function(data){
+					jQuery("#main").LoadingOverlay("hide");
 				}
 			});
 		}
