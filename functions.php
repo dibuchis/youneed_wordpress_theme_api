@@ -188,9 +188,9 @@ function api_youneed_asociados(){
     }
 
     if(isset($_POST['filtro-servicio'])){
+        
         $srv_id = $_POST['filtro-servicio'];
-        $_SESSION['servicio_id'] = $_POST['filtro-servicio'];
-
+        
         
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/getservicio?serviceID=' . $srv_id);
@@ -200,7 +200,8 @@ function api_youneed_asociados(){
         curl_close($ch);
         
         $servicio = json_decode($dataAsoc);
-
+        
+        $_SESSION['servicio_id'] = $srv_id;
         $_SESSION['categoria_actual'] = $_servicio->servicio->cat_id;
     }
     
