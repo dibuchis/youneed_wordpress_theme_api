@@ -74,18 +74,28 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php wp_footer(); ?>
 	</body>
 <script>
-	var elLog = document.querySelector("a[title='login']");
-	
-	addEvent(elLog, "click", function(event){
-        //alert('testing');
-        if(event.preventDefault){
-            event.preventDefault;
-        }
-         if (event.stopPropagation) {
-            event.stopPropagation();
-         }
-        return false;
-    });
+	jQuery(document).ready(function(){
+		try {
+		
+			var elLog = document.querySelector("a[title='login']");
+			
+			addEvent(elLog, "click", function(event){
+				//alert('testing');
+				if(event.preventDefault){
+					event.preventDefault;
+				}
+				if (event.stopPropagation) {
+					event.stopPropagation();
+				}
+				return false;
+			});
+		
+		} catch (error) {
+			
+		}
+
+	}
+		
 	
     (function($){
         $("#yn-login").click(function(event){ 
