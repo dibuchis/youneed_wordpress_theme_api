@@ -838,5 +838,12 @@ function api_youneed_filtro_servicio(){
 }
 add_shortcode( 'api_youneed_filtro_servicio', 'api_youneed_filtro_servicio' );
 
-add_action('wp_ajax_folder_contents', 'api_youneed_filtro_servicio');
-add_action('wp_ajax_nopriv_folder_contents', 'api_youneed_filtro_servicio');
+function testAjax(){
+    if(wp_doing_ajax()){
+        echo '<h1>TEXTO</h1>';
+        wp_die();
+    }
+}
+
+add_action('wp_ajax_folder_contents', 'testAjax');
+add_action('wp_ajax_nopriv_folder_contents', 'testAjax');
