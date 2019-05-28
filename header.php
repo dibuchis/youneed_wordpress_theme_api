@@ -83,7 +83,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/bootstrap-datepicker/moment.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/bootstrap-datepicker/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+	<script>
+		function loadServiciosFilter(){
+		var cat = jQuery("#filtro-categoria-data").val();
 
+			jQuery.ajax({
+				type: 'POST',
+				url: "https://youneed.com.ec/wp-admin/admin-ajax.php",
+				data: {
+					action: 'api_youneed_filtro_servicio',
+					servicio :  jQuery("#filtro-categoria-data").val()
+				},
+				success: function( data ) {
+					jQuery('#widget-filtro-servicio').html(data);
+				}
+			});
+		}
+	</script>
 	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js"></script>
 </head>
     <!-- LOGIN -->
