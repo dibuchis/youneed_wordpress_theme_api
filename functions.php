@@ -707,7 +707,6 @@ function api_youneed_listar_asociados(){
         $text .= "<h3 class='filtro-titulo'><b>Ordenar</b></h3>"; 
         //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
         $text .= '<form method="post" id="filtro-orden" >';
-        $text .= '<label>Método de pago </label><br>';
         $text .= '<select id="filtro-orden-data" name="filtro-orden" >';
             $text .= '<option value="id">defecto</option>';
             $text .= '<option value="nombre">nombre</option>';
@@ -748,7 +747,6 @@ function api_youneed_filtro_categoria(){
 
         //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
         $text .= '<form method="post" id="filtro-categoria" >';
-        $text .= '<label>Método de pago </label><br>';
         $text .= '<select id="filtro-categoria-data" name="filtro-categoria" >';
             foreach($cats as $key => $val){
                 $text .= '<option value="' . $val->id . '">' . $val->nombre . '</option>';
