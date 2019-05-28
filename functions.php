@@ -582,11 +582,29 @@ function api_youneed_contratar(){
             $out .= '<tbody>';
                 $out .= '<tr>';
                     $out .= '<td>Incluye</td>';
-                    $out .= '<td class="checkout_meta meta-mini">' . $_servicio->servicio->incluye .'</td>';
+
+                    $incluye = explode(",",$_servicio->servicio->incluye);
+
+                    $list_incluye = "<ul>";
+                    foreach($servicios as $k => $v){
+                        $list_incluye .= "<li>" . $v . "<li>";        
+                    }
+                    $list_incluye .= "</ul>";
+
+                    $out .= '<td class="checkout_meta meta-mini">' . $list_incluye .'</td>';
                     $out .= '</tr>';
                     $out .= '<tr>';
                     $out .= '<td>No Incluye</td>';
-                    $out .= '<td class="checkout_meta meta-mini">' . $_servicio->servicio->no_incluye .'</td>';
+
+                    $no_incluye = explode(",",$_servicio->servicio->no_incluye);
+
+                    $list_no_incluye = "<ul>";
+                    foreach($servicios as $k => $v){
+                        $list_no_incluye .= "<li>" . $v . "<li>";        
+                    }
+                    $list_no_incluye .= "</ul>";
+
+                    $out .= '<td class="checkout_meta meta-mini">' . $list_no_incluye .'</td>';
                 $out .= '</tr>';
                 $out .= '</tr>';
             $out .= '</tbody>';
@@ -599,6 +617,7 @@ function api_youneed_contratar(){
         $out .= '</div>';
         $out .= '</div>';
         $out .= '</div>';
+        $out .= '<script></script>';
     }else{
         $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: #f3f3f3;background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         $out .= '<h2>Acceso para usuarios</h2>';
