@@ -732,11 +732,9 @@ function api_youneed_filtro_categoria($atts){
             'ajax' => false,
         ), $atts );
 
-        $text = "<div class='filtro-wrapper'>"; 
-        $text .= "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
         $ch = curl_init();
         $categoria_actual = 0;
-
+        
         if(isset($_SESSION['categoria_actual'])){
             $categoria_actual = $_SESSION['categoria_actual'];
         }
@@ -755,6 +753,9 @@ function api_youneed_filtro_categoria($atts){
         
         $cats = $result->output;
         
+        
+        $text = "<div class='filtro-wrapper'>"; 
+        $text .= "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
         //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
         $text .= '<form method="post" id="filtro-categoria" >';
         $text .= '<select id="filtro-categoria-data" name="filtro-categoria" >';
@@ -780,16 +781,14 @@ add_shortcode( 'api_youneed_filtro_categoria', 'api_youneed_filtro_categoria' );
 
 
 function api_youneed_filtro_servicio(){
-    $text = "<div class='filtro-wrapper'>"; 
-    $text .= "<h3 class='filtro-titulo'><b>Servicio</b></h3>"; 
     $ch = curl_init();
     $categoria_actual = 0;
     $servicio_actual = 0;
-
+    
     if(isset($_SESSION['categoria_actual'])){
         $categoria_actual = $_SESSION['categoria_actual'];
     }
-
+    
     if(isset($_SESSION['servicio_id'])){
         $servicio_actual = $_SESSION['servicio_id'];
     }
@@ -808,6 +807,9 @@ function api_youneed_filtro_servicio(){
     
     $servicios = $result->output;
     
+    $text = "<div class='filtro-wrapper'>"; 
+    $text .= "<h3 class='filtro-titulo'><b>Servicio(" . $categoria_actual . ")(" . $servicio_actual . ")</b></h3>"; 
+
     //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
     $text .= '<form method="post" id="filtro-servicio" >';
     $text .= '<select id="filtro-servicio-data" name="filtro-servicio" >';
