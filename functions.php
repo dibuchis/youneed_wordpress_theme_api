@@ -124,6 +124,7 @@ function api_youneed_servicios(){
     
     if($_REQUEST['cat_id']){
         $cat_id = $_REQUEST['cat_id'];
+        $_SESSION['categoria_actual'] = $_REQUEST['cat_id'];
     }else{
         $cat_id = 1;
     }
@@ -728,28 +729,36 @@ add_shortcode( 'api_youneed_filtro_ciudades', 'api_youneed_filtro_ciudades' );
 function api_youneed_filtro_categoria(){
         $text = "<div class='filtro-wrapper'>"; 
         $text .= "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
-
         $ch = curl_init();
+        $categoria_actual = 0;
 
+        if(isset($_SESSION['categoria_actual'])){
+            $categoria_actual = $_SESSION['categoria_actual'];
+        }
+        
         curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadocategorias?ordenado=true');
-    
+        
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-         
+        
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-         
+        
         $data = curl_exec($ch);
-    
+        
         curl_close($ch);
-    
+        
         $result = json_decode($data);
         
         $cats = $result->output;
-
+        
         //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
         $text .= '<form method="post" id="filtro-categoria" >';
         $text .= '<select id="filtro-categoria-data" name="filtro-categoria" >';
-            foreach($cats as $key => $val){
-                $text .= '<option value="' . $val->id . '">' . $val->nombre . '</option>';
+        foreach($cats as $key => $val){
+                if($categoria_actual == $val->id){
+                    $text .= '<option value="' . $val->id . '" selected>' . $val->nombre . '</option>';
+                }else{
+                    $text .= '<option value="' . $val->id . '">' . $val->nombre . '</option>';
+                }
             }
         $text .= '</select>';
         $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
