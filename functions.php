@@ -705,7 +705,16 @@ add_shortcode( 'api_youneed_contratar', 'api_youneed_contratar' );
 function api_youneed_listar_asociados(){
         $text = "<h3 class='filtro-titulo'><b>Ordenar</b></h3>"; 
         //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
-        
+        $text .= '<form method="post" id="filtro-orden" >';
+        $text .= '<label>Método de pago </label><br>';
+        $text .= '<select id="filtro-orden-data" name="filtro-orden" >';
+            $text .= '<option value="tarjeta">Nombre</option>';
+            $text .= '<option value="efectivo">Calificaciones</option>';
+            $text .= '<option value="deposito">Depósito</option>';
+            $text .= '<option value="transferencia">Transferencia</option>';
+        $text .= '</select>';
+        $text .= '<a class="ver-asociados btn-asociados" href="javascript:{}" onclick="document.getElementById(\'filtro-orden\').submit();"">Filtrar</a>';
+        $text .= '</form>';
         return $text;
 }
 add_shortcode( 'api_youneed_listar_asociados', 'api_youneed_listar_asociados' );
@@ -713,15 +722,38 @@ add_shortcode( 'api_youneed_listar_asociados', 'api_youneed_listar_asociados' );
 function api_youneed_filtro_ciudades(){
         $text = "<h3 class='filtro-titulo'><b>Ubicación</b></h3>"; 
         //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
-        
-        return $text;
 }
 add_shortcode( 'api_youneed_filtro_ciudades', 'api_youneed_filtro_ciudades' );
 
 function api_youneed_filtro_categoria(){
         $text = "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
-        //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
+
+        $ch = curl_init();
+
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadocategorias');
+    
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+         
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+         
+        $data = curl_exec($ch);
+    
+        curl_close($ch);
+    
+        $result = json_decode($data);
         
+        $cats = $result->output;
+
+        //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
+        $text .= '<form method="post" id="filtro-categoria" >';
+        $text .= '<label>Método de pago </label><br>';
+        $text .= '<select id="filtro-categoria-data" name="filtro-categoria" >';
+            foreach($cats as $key => $val){
+                $text .= '<option value="' . $key . '">' . $val . '</option>';
+            }
+        $text .= '</select>';
+        $text .= '<a class="ver-asociados btn-asociados" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
+        $text .= '</form>';
         return $text;
 }
 add_shortcode( 'api_youneed_filtro_categoria', 'api_youneed_filtro_categoria' );
