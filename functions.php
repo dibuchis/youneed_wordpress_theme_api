@@ -180,9 +180,9 @@ function api_youneed_asociados(){
     
 	
 	
-    if($_REQUEST['srv_id']){
-        $srv_id = $_REQUEST['srv_id'];
-		$_SESSION['servicio_id'] = $_REQUEST['srv_id'];
+    if(isset($_GET['srv_id']) && !isset($_POST['filtro-servicio'])){
+        $srv_id = $_GET['srv_id'];
+		$_SESSION['servicio_id'] = $srv_id;
     }else{
         $srv_id = 1;
     }
