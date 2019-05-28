@@ -78,12 +78,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- Include English language -->
 	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/datepicker/dist/js/i18n/datepicker.en.js"></script>*/ 
 	?>
-
-	<link href="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css" rel="stylesheet">
-	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
-	<script src="//cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/src/js/bootstrap-datetimepicker.js"></script>
 	
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/bootstrap-datepicker/moment.js"></script>
+	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/bootstrap-datepicker/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
 	<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js"></script>
 </head>
     <!-- LOGIN -->
