@@ -56,19 +56,13 @@ function api_youneed_categorias(){
     // wp_enqueue_script('owl-carrousel-api');
     
     $ch = curl_init();
-
     curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadocategorias');
-
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-     
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-     
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);     
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);     
     $data = curl_exec($ch);
-
     curl_close($ch);
-
     $result = json_decode($data);
-    
+
     $cats = $result->output;
     
     $out = '<i>No se han encontrado categorias disponibles.</i>';
@@ -130,17 +124,11 @@ function api_youneed_servicios(){
     }
     
     $ch = curl_init();
-
     curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $cat_id);
-
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-     
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-     
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);     
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);     
     $data = curl_exec($ch);
-
     curl_close($ch);
-
     $result = json_decode($data);
     
     $cats = $result->output;
@@ -201,6 +189,19 @@ function api_youneed_asociados(){
 
     if(isset($_POST['filtro-servicio'])){
         $srv_id = $_POST['filtro-servicio'];
+        $_SESSION['servicio_id'] = $_POST['filtro-servicio'];
+
+        
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/getservicio?serviceID=' . $srv_id);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);         
+        $dataAsoc = curl_exec($ch);    
+        curl_close($ch);
+        
+        $servicio = json_decode($dataAsoc);
+
+        $_SESSION['categoria_actual'] = $_servicio->servicio->cat_id;
     }
     
 	
@@ -214,16 +215,11 @@ function api_youneed_asociados(){
     
     $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, $chUrl);
-    
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-         
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-         
-        $data = curl_exec($ch);
-    
-        curl_close($ch);
-    
+        curl_setopt($ch, CURLOPT_URL, $chUrl);    
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);         
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);         
+        $data = curl_exec($ch);    
+        curl_close($ch);    
         $result = json_decode($data);
 		
 		// echo "<pre>";
@@ -307,14 +303,10 @@ function api_youneed_contar_asociados(){
         $srv_id = $_REQUEST['srv_id'];
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/contarasociados?srv_id=' . $srv_id);
-    
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-         
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-         
-        $data = curl_exec($ch);
-    
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/contarasociados?srv_id=' . $srv_id);    
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);         
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);         
+        $data = curl_exec($ch);    
         curl_close($ch);
         
         $result = json_decode($data);
@@ -354,14 +346,10 @@ function api_youneed_asociado(){
         
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/verasociado?aso_id=' . $_REQUEST['id'] . '&api_token=8e705fdb6ed22df72e4fcbeb37bcf517');
-    
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-         
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-         
-        $dataAsoc = curl_exec($ch);
-    
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/verasociado?aso_id=' . $_REQUEST['id'] . '&api_token=8e705fdb6ed22df72e4fcbeb37bcf517');    
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);         
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);         
+        $dataAsoc = curl_exec($ch);    
         curl_close($ch);
         
         $asociado = json_decode($dataAsoc);
@@ -521,7 +509,6 @@ function api_youneed_contratar(){
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/getservicio');
-
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); //Return data instead printing directly in Browser
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); //Timeout after 7 seconds
         curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1)");
@@ -545,14 +532,10 @@ function api_youneed_contratar(){
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/verasociado?aso_id=' . $asociado_id . '&api_token=8e705fdb6ed22df72e4fcbeb37bcf517');
-    
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-         
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-         
-        $dataAsoc = curl_exec($ch);
-    
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/verasociado?aso_id=' . $asociado_id . '&api_token=8e705fdb6ed22df72e4fcbeb37bcf517');    
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);         
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);         
+        $dataAsoc = curl_exec($ch);    
         curl_close($ch);
         
         $asociado = json_decode($dataAsoc);
@@ -744,16 +727,11 @@ function api_youneed_filtro_categoria($atts){
             $categoria_actual = $_SESSION['categoria_actual'];
         }
         
-        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadocategorias?ordenado=true');
-        
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        
-        $data = curl_exec($ch);
-        
-        curl_close($ch);
-        
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadocategorias?ordenado=true');        
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);        
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);        
+        $data = curl_exec($ch);        
+        curl_close($ch);        
         $result = json_decode($data);
         
         $cats = $result->output;
@@ -803,16 +781,11 @@ function api_youneed_filtro_servicio(){
 
     $ch = curl_init();
     
-    curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $categoria_actual . "&ordenado=true");
-    
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    
-    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-    
-    $data = curl_exec($ch);
-    
-    curl_close($ch);
-    
+    curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $categoria_actual . "&ordenado=true");    
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);    
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);    
+    $data = curl_exec($ch);    
+    curl_close($ch);    
     $result = json_decode($data);
     
     $servicios = $result->output;
