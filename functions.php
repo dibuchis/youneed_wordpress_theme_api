@@ -466,7 +466,7 @@ function api_youneed_contratar(){
     // wp_register_style('bootstrap-icons', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/css/bootstrap.min.css');
     // wp_enqueue_style( 'bootstrap' );
 
-    wp_register_style('bootstrap-icons', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/glyphicons-only-bootstrap/bootstrap.min.css');
+    wp_register_style('bootstrap-icons', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/glyphicons-only-bootstrap/css/bootstrap.min.css');
     wp_enqueue_style( 'bootstrap-icons' );
 
     $user = null;
