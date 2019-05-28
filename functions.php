@@ -593,8 +593,8 @@ function api_youneed_contratar(){
                 $out .= '<tr>';
                     $out .= '<td>' . $asociado->id . '</td>';
                     $out .= '<td>' . $asociado->nombres . '</td>';
-                    $out .= '<td>' . $asociado->apellidos . '</d>';
-                    $out .= '<td>' . $asociado->pais . " / " . $asociado->pais . '</d>';
+                    $out .= '<td>' . $asociado->apellidos . '</td>';
+                    $out .= '<td>' . $asociado->pais . " / " . $asociado->pais . '</td>';
                     $out .= '<td><div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div></d>';
                 $out .= '</tr>';
             $out .= '</tbody>';
