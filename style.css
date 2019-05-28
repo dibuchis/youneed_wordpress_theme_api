@@ -225,10 +225,10 @@ span.user-name {
     background-color:#e6a13e !important;
 }
 .btn-small{
-  font-size:0.8em;
-  width:80px;
-  height:30px;
-  padding:5px;
+  font-size:0.8em !important;
+  width:80px !important;
+  height:30px !important;
+  padding:5px !important;
 }
 .left-panel{
   display:inline-block;
