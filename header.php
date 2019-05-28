@@ -90,7 +90,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<script>
 		function loadServiciosFilter(){
 		
-		jQuery("#main").LoadingOverlay("show", {maxSize: 70 });
+		jQuery("#sidebar").LoadingOverlay("show", {maxSize: 70 });
 		
 		
 		var cat = jQuery("#filtro-categoria-data").val();
@@ -104,10 +104,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				},
 				success: function( data ) {
 					jQuery('#widget-filtro-servicio').html(data);
-					jQuery("#main").LoadingOverlay("hide");
+					jQuery("#sidebar").LoadingOverlay("hide");
 				},
 				error: function(data){
-					jQuery("#main").LoadingOverlay("hide");
+					jQuery("#sidebar").LoadingOverlay("hide");
 				}
 			});
 		}
