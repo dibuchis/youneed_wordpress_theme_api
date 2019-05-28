@@ -731,7 +731,7 @@ function api_youneed_filtro_categoria(){
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadocategorias');
+        curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadocategorias?ordenado=true');
     
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
          
