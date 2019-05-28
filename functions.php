@@ -733,7 +733,7 @@ function api_youneed_filtro_categoria($atts){
         ), $atts );
 
         $text = "<div class='filtro-wrapper'>"; 
-        $text .= "<h3 class='filtro-titulo'><b>Categortía{$a['ajax']}</b></h3>"; 
+        $text .= "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
         $ch = curl_init();
         $categoria_actual = 0;
 
