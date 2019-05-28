@@ -559,20 +559,20 @@ function api_youneed_contratar(){
 
             
             $out .= '<h2>Datos de Servicio</h2>';
-            $out .= '<table class="table-1"  style="margin-bottom:35px;">';
+            $out .= '<table class="table-1 checkout-table"  style="margin-bottom:35px;">';
                 $out .= '<tbody>';
                     $out .= '<tr>';
-                        $out .= '<th></th>';
-                        $out .= '<th>Código</th>';
-                        $out .= '<th>Descripción</th>';
-                        $out .= '<th>Valor</th>';
+                        $out .= '<td></td>';
+                        $out .= '<td>Código</td>';
+                        $out .= '<td>Descripción</td>';
+                        $out .= '<td>Valor</td>';
                     $out .= '</tr>';
                     
                     $out .= '<tr>';
-                        $out .= '<td class="checkout_meta"><img width="50" src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
-                        $out .= '<td class="checkout_meta">' . $_servicio->servicio->id .'</td>';
-                        $out .= '<td class="checkout_meta">' . $_servicio->servicio->nombre .'</td>';
-                    $out .= '<td class="checkout_meta">' . $_servicio->servicio->total .'</td>';
+                        $out .= '<th class="checkout_meta"><img width="50" src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></th>';
+                        $out .= '<th class="checkout_meta">' . $_servicio->servicio->id .'</th>';
+                        $out .= '<th class="checkout_meta">' . $_servicio->servicio->nombre .'</th>';
+                    $out .= '<th class="checkout_meta">' . $_servicio->servicio->total .'</th>';
                     $out .= '</tr>';
                 $out .= '</tbody>';
             $out .= '</table>';
