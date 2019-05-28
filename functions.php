@@ -198,6 +198,11 @@ function api_youneed_asociados(){
     }else{
         $srv_id = 1;
     }
+
+    if(isset($_POST['filtro-servicio'])){
+        $srv_id = $_POST['filtro-servicio'];
+    }
+    
 	
 	$chUrl = 'https://app.youneed.com.ec/ajax/listadoasociados?srv_id=' . $srv_id;
 	
