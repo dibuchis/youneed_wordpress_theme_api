@@ -574,7 +574,6 @@ function api_youneed_contratar(){
             $out .= '</select>';
             
             $out .= '<label>Datos del Profesional </label>';
-            $out .= '<div><img src="' . $asociado->imagen . '"> </div>';
             $out .= '<table class="checkout-asoc-table" style="margin-bottom:35px;">';
             $out .= '<tbody>';
                 $out .= '<tr>';
