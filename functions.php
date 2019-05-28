@@ -583,7 +583,7 @@ function api_youneed_contratar(){
             $out .= '<table class="checkout-asoc-table" style="margin-bottom:35px;">';
             $out .= '<tbody>';
                 $out .= '<tr>';
-                    $out .= '<td class="meta-image-asoc" rowspan="2"><img width="80" src="' . $asociado->imagen . '"> </td>';
+                    $out .= '<td rowspan="2"><img width="80" src="' . $asociado->imagen . '"> </td>';
                     $out .= '<td>Código</td>';
                     $out .= '<td>Nombre</td>';
                     $out .= '<td>Apellido</td>';
@@ -679,6 +679,7 @@ function api_youneed_contratar(){
         $out .= '</div>';
         $out .= '</div>';
         $out .= '</div>';
+        $out .= '<script></script>';
     }else{
         $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: #f3f3f3;background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         $out .= '<h2>Acceso para usuarios</h2>';
