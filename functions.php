@@ -733,7 +733,7 @@ function api_youneed_filtro_categoria($atts = [], $content = null, $tag = ''){
         
         // override default attributes with user attributes
         $wporg_atts = shortcode_atts([
-            'AjaxServicio' => false,
+            'ajax' => false,
         ], $atts, $tag);
 
         $text = "<div class='filtro-wrapper'>"; 
@@ -771,7 +771,7 @@ function api_youneed_filtro_categoria($atts = [], $content = null, $tag = ''){
             }
         $text .= '</select>';
         
-        if($wporg_atts['AjaxServicio']){
+        if($wporg_atts['ajax']){
             $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" id="filtroCategoriaAjax" onclick="loadServiciosFilter()">Filtrar</a>';
         }else{
             $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
