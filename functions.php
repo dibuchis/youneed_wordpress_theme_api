@@ -781,7 +781,6 @@ add_shortcode( 'api_youneed_filtro_categoria', 'api_youneed_filtro_categoria' );
 
 
 function api_youneed_filtro_servicio(){
-    $ch = curl_init();
     $categoria_actual = 0;
     $servicio_actual = 0;
     
@@ -793,7 +792,9 @@ function api_youneed_filtro_servicio(){
         $servicio_actual = $_SESSION['servicio_id'];
     }
     
-    curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $categoria_actual . '&ordenado=true');
+    $ch = curl_init();
+    
+    curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $categoria_actual);
     
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     
@@ -808,7 +809,7 @@ function api_youneed_filtro_servicio(){
     $servicios = $result->output;
     
     $text = "<div class='filtro-wrapper'>"; 
-    $text .= "<h3 class='filtro-titulo'><b>Servicio(" . $categoria_actual . ")(" . $servicio_actual . ")</b></h3>"; 
+    $text .= "<h3 class='filtro-titulo'><b>Servicio</b></h3>"; 
 
     //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
     $text .= '<form method="post" id="filtro-servicio" >';
