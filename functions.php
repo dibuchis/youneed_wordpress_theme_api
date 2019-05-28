@@ -703,18 +703,19 @@ add_shortcode( 'api_youneed_contratar', 'api_youneed_contratar' );
  * 
  */
 function api_youneed_listar_asociados(){
-        $text = "<h3 class='filtro-titulo'><b>Ordenar</b></h3>"; 
+        $text = "<div class='filtro-wrapper'>"; 
+        $text .= "<h3 class='filtro-titulo'><b>Ordenar</b></h3>"; 
         //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
         $text .= '<form method="post" id="filtro-orden" >';
         $text .= '<label>Método de pago </label><br>';
         $text .= '<select id="filtro-orden-data" name="filtro-orden" >';
-            $text .= '<option value="tarjeta">Nombre</option>';
-            $text .= '<option value="efectivo">Calificaciones</option>';
-            $text .= '<option value="deposito">Depósito</option>';
-            $text .= '<option value="transferencia">Transferencia</option>';
+            $text .= '<option value="id">defecto</option>';
+            $text .= '<option value="nombre">nombre</option>';
+            $text .= '<option value="calificacion">calificaciones</option>';
         $text .= '</select>';
         $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-orden\').submit();"">Filtrar</a>';
         $text .= '</form>';
+        $text .= '</div>';
         return $text;
 }
 add_shortcode( 'api_youneed_listar_asociados', 'api_youneed_listar_asociados' );
@@ -726,7 +727,8 @@ function api_youneed_filtro_ciudades(){
 add_shortcode( 'api_youneed_filtro_ciudades', 'api_youneed_filtro_ciudades' );
 
 function api_youneed_filtro_categoria(){
-        $text = "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
+        $text = "<div class='filtro-wrapper'>"; 
+        $text .= "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
 
         $ch = curl_init();
 
@@ -754,6 +756,7 @@ function api_youneed_filtro_categoria(){
         $text .= '</select>';
         $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
         $text .= '</form>';
+        $text .= '</div>';
         return $text;
 }
 add_shortcode( 'api_youneed_filtro_categoria', 'api_youneed_filtro_categoria' );
