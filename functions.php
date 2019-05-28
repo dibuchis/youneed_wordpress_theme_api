@@ -178,13 +178,11 @@ add_shortcode( 'api_youneed_servicios', 'api_youneed_servicios' );
  */
 function api_youneed_asociados(){
     
-	
+	$srv_id = 0;
 	
     if(isset($_GET['srv_id']) && !isset($_POST['filtro-servicio'])){
         $srv_id = $_GET['srv_id'];
 		$_SESSION['servicio_id'] = $srv_id;
-    }else{
-        $srv_id = 1;
     }
 
     if(isset($_POST['filtro-servicio'])){
