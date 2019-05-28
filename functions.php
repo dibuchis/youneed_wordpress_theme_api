@@ -539,7 +539,7 @@ function api_youneed_contratar(){
         
         $asociado = json_decode($dataAsoc);
 
-        $out = '<div id="panel-asociado" class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;">';
+        $out = '<div id="panel-checkout" class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;">';
         $out .= '<div class="fusion-builder-row fusion-row ">';
         $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         
