@@ -830,7 +830,7 @@ function api_youneed_filtro_servicio(){
     $text .= '</form>';
     $text .= '</div>';
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])){
-        echo json_encode($text);
+        echo $text;
         exit();
     }else{
         return $text;
@@ -838,12 +838,12 @@ function api_youneed_filtro_servicio(){
 }
 add_shortcode( 'api_youneed_filtro_servicio', 'api_youneed_filtro_servicio' );
 
-function testAjax(){
-    if(wp_doing_ajax()){
-        echo '<h1>TEXTO</h1>';
-        wp_die();
-    }
-}
+// function testAjax(){
+//     if(wp_doing_ajax()){
+//         echo '<h1>TEXTO</h1>';
+//         wp_die();
+//     }
+// }
 
-add_action('wp_ajax_folder_contents', 'testAjax');
-add_action('wp_ajax_nopriv_folder_contents', 'testAjax');
+add_action('wp_ajax_api_youneed_filtro_servicio', 'api_youneed_filtro_servicio');
+add_action('wp_ajax_nopriv_api_youneed_filtro_servicio', 'api_youneed_filtro_servicio');
