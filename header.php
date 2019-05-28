@@ -20,17 +20,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 	<script>
 	function addEvent(elm, evType, fn) {
-        if (elm.addEventListener) {
-            elm.addEventListener(evType, fn, false);
-            return true;
-        }
-        else if (elm.attachEvent) {
-            var r = elm.attachEvent('on' + evType, fn);
-            return r;
-        }
-        else {
-            elm['on' + evType] = fn;
-        }
+		try {
+			if (elm.addEventListener) {
+				elm.addEventListener(evType, fn, false);
+				return true;
+			}
+			else if (elm.attachEvent) {
+				var r = elm.attachEvent('on' + evType, fn);
+				return r;
+			}
+			else {
+				elm['on' + evType] = fn;
+			}
+		} catch (error) {
+			
+		}
     }
 
 	</script>
