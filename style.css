@@ -467,6 +467,7 @@ padding:20px;
 .checkout-table{
   border: solid 0.5px #eee;
   border-radius: 5px;
+  overflow: hidden;
 }
 .checkout-table tbody tr td:nth-child(1){
   width:10%;
