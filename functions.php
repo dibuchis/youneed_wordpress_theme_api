@@ -564,7 +564,10 @@ function api_youneed_contratar(){
                 $out .= '<input id="cliente_id" type="hidden" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
                 $out .= '<input id="servicio_id" type="hidden" name="Pedido[servicio_id]" value="' . $servicio_id . '">';
                 $out .= '<input id="valor_total" type="hidden" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
-                
+        $out .= '</div>';
+        $out .= '</div>';
+        $out .= '<div class="fusion-builder-row fusion-row ">';
+        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
             $out .= '<label>Método de pago </label>';
             $out .= '<select id="metodo_de_pago" name="Pedido[metodo_de_pago]" >';
             $out .= '<option value="tarjeta">Tarjeta de Crédito</option>';
@@ -572,7 +575,10 @@ function api_youneed_contratar(){
             $out .= '<option value="deposito">Depósito</option>';
             $out .= '<option value="transferencia">Transferencia</option>';
             $out .= '</select>';
-            
+        $out .= '</div>';
+        $out .= '</div>';
+        $out .= '<div class="fusion-builder-row fusion-row ">';
+        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
             $out .= '<label>Datos del Profesional </label>';
             $out .= '<table class="checkout-asoc-table" style="margin-bottom:35px;">';
             $out .= '<tbody>';
@@ -598,8 +604,13 @@ function api_youneed_contratar(){
             // AGREGAR COORDENADAS DE API GEOREFERENCIAL !!!!!
 			// $out .= '<input id="georeferencia" type="hidden" name="georeferencia" value="' . $_POST["servicio_id"] . '">';
 
+            $out .= '</div>';
+            $out .= '</div>';
+            
             $fecha_actual = date("Y/m/d H:i");
-
+            
+            $out .= '<div class="fusion-builder-row fusion-row ">';
+            $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
             $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
             $out .= '<h2><center>Fecha de Servicio</center></h2>';
             $out .= '<div style="overflow:hidden;margin-bottom:35px;"><div class="form-group"><div class="row"><div class="col-md-8 col-md-offset-2"><div id="datetimepicker12"></div></div></div></div>';
