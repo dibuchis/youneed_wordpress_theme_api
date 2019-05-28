@@ -829,7 +829,7 @@ function api_youneed_filtro_servicio(){
     $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-servicio\').submit();"">Filtrar</a>';
     $text .= '</form>';
     $text .= '</div>';
-    if(wp_doing_ajax()){
+    if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])){
         echo $text;
         exit();
     }else{
