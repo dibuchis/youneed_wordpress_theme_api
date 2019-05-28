@@ -740,7 +740,7 @@ function api_youneed_filtro_categoria($atts){
         $text .= "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
         //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
         $text .= '<form method="post" id="filtro-categoria" >';
-        $text .= '<select id="filtro-categoria-data" name="filtro-categoria" >';
+        $text .= '<select id="filtro-categoria-data" name="filtro-categoria" ' . ($a['ajax'] ? 'id="filtroCategoriaAjax"' : '') . ' onchange="loadServiciosFilter()">';
         foreach($cats as $key => $val){
                 if($categoria_actual == $val->id){
                     $text .= '<option value="' . $val->id . '" selected>' . $val->nombre . '</option>';
@@ -750,9 +750,7 @@ function api_youneed_filtro_categoria($atts){
             }
         $text .= '</select>';
         
-        if($a['ajax']){
-            $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" id="filtroCategoriaAjax" onclick="loadServiciosFilter()">Filtrar</a>';
-        }else{
+        if(!$a['ajax']){
             $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
         }
         $text .= '</form>';
