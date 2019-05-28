@@ -483,3 +483,11 @@ padding:20px;
 .meta-mini{
   font-size: 0.8em;
 }
+.day.disabled{
+  background-color: #f3f3f3 !important;
+  color: #bbb !important;
+}
+.day{
+  padding:10px 4px!important;
+  margin:4px;
+}
