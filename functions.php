@@ -713,7 +713,7 @@ function api_youneed_listar_asociados(){
             $text .= '<option value="deposito">Depósito</option>';
             $text .= '<option value="transferencia">Transferencia</option>';
         $text .= '</select>';
-        $text .= '<a class="ver-asociados btn-asociados" href="javascript:{}" onclick="document.getElementById(\'filtro-orden\').submit();"">Filtrar</a>';
+        $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-orden\').submit();"">Filtrar</a>';
         $text .= '</form>';
         return $text;
 }
@@ -749,10 +749,10 @@ function api_youneed_filtro_categoria(){
         $text .= '<label>Método de pago </label><br>';
         $text .= '<select id="filtro-categoria-data" name="filtro-categoria" >';
             foreach($cats as $key => $val){
-                $text .= '<option value="' . $key . '">' . $val . '</option>';
+                $text .= '<option value="' . $val->id . '">' . $val->nombre . '</option>';
             }
         $text .= '</select>';
-        $text .= '<a class="ver-asociados btn-asociados" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
+        $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
         $text .= '</form>';
         return $text;
 }
