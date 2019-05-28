@@ -556,7 +556,7 @@ function api_youneed_contratar(){
 
             $out .= '<table class="table-2">';
             $out .= '<tr>';
-            $out .= '<td><label>Fecha del servicio</label><input type="text" id="fecha_servicio" name="Pedido[fecha_para_servicio]" ><div id="fecha_servicio_content"></div></td>';
+            $out .= '<td><label>Fecha del servicio</label><input type="text" id="fecha_servicio" name="Pedido[fecha_para_servicio]" class="datepickerinput" ><div id="fecha_servicio_content"></div></td>';
             $out .= '</tr>';
             $out .= '</table>';
             $out .= '<hr>';
