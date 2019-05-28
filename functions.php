@@ -555,13 +555,13 @@ function api_youneed_contratar(){
             $fecha_actual = date("Y/m/d H:i");
 
             $out .= '<h2><center>Fecha de Servicio</center></h2>';
-            $out .= '<hr>';
+            $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
             $out .= '<div style="overflow:hidden;margin-bottom:35px;"><div class="form-group"><div class="row"><div class="col-md-8 col-md-offset-2"><div id="datetimepicker12"></div></div></div></div>';
             $out .= '<script>var today = new Date(); jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true, locale: "es", minDate: today });</script>';
             $out .= '<input type="hidden" id="fecha_servicio" name="Pedido[fecha_para_servicio]" class="datepickerinput" >';
             $out .= '</div>';
             $out .= '<h2><center>Datos de Servicio</center></h2>';
-            $out .= '<hr>';
+            $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
             $out .= '<table class="table-1 checkout-table"  style="margin-bottom:35px;">';
                 $out .= '<tbody>';
                     $out .= '<tr>';
