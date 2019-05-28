@@ -549,16 +549,18 @@ function api_youneed_contratar(){
 
             $fecha_actual = date("Y/m/d H:i");
 
+            $out .= '<h2>Fecha de Servicio</h2>';
             $out .= '<div style="overflow:hidden;"><div class="form-group"><div class="row"><div class="col-md-8"><div id="datetimepicker12"></div></div></div></div>';
-            $out .= '<script>jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true });</script>';
+            $out .= '<script>var today = new Date(); jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true, locale: "es", minDate: today });</script>';
             $out .= '</div>';
-
             $out .= '<table class="table-2">';
-                $out .= '<tr>';
-                $out .= '<td><label>Fecha del servicio</label><input id="Pedido[fecha_para_servicio]" type="text" id="fecha_servicio" name="fecha_servicio" ><div id="fecha_servicio_content"></div></td>';
-                $out .= '</tr>';
+            $out .= '<tr>';
+            $out .= '<td><label>Fecha del servicio</label><input id="Pedido[fecha_para_servicio]" type="text" id="fecha_servicio" name="fecha_servicio" ><div id="fecha_servicio_content"></div></td>';
+            $out .= '</tr>';
             $out .= '</table>';
+            $out .= '<hr>';
             
+            $out .= '<h2>Datos de Servicio</h2>';
             $out .= '<table class="table-1">';
                 $out .= '<tr>';
                     $out .= '<th></th>';
@@ -567,7 +569,7 @@ function api_youneed_contratar(){
                     $out .= '<th>Incluye</th>';
                     $out .= '<th>No Incluye</th>';
                     $out .= '<th>Valor</th>';
-                $out .= '</th>';
+                $out .= '</tr>';
                 
                 $out .= '<tr>';
                     $out .= '<td class="checkot_meta"><img src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
@@ -578,8 +580,9 @@ function api_youneed_contratar(){
                     $out .= '<td class="checkot_meta">' . $_servicio->servicio->total .'</td>';
                 $out .= '</th>';
             $out .= '</table>';
+            $out .= '<hr>';
             
-            $out .= '<a onclick="contratarAsociado(event)" href="#">Contratar</a>';
+            $out .= '<a class="ver-asociados btn-asociados" onclick="contratarAsociado(event)" href="#">Contratar</a>';
         $out .= '</form>';
         $out .= '</div>';
         $out .= '</div>';
