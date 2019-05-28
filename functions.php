@@ -569,7 +569,7 @@ function api_youneed_contratar(){
                     $out .= '</tr>';
                     
                     $out .= '<tr>';
-                        $out .= '<td class="checkout_meta"><img width="120" src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
+                        $out .= '<td class="checkout_meta"><img width="50" src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
                         $out .= '<td class="checkout_meta">' . $_servicio->servicio->id .'</td>';
                         $out .= '<td class="checkout_meta">' . $_servicio->servicio->nombre .'</td>';
                     $out .= '<td class="checkout_meta">' . $_servicio->servicio->total .'</td>';
