@@ -590,6 +590,8 @@ function api_youneed_contratar(){
                         $list_incluye .= "<li>" . $v . "</li>";        
                     }
                     $list_incluye .= "</ul>";
+                    $list_incluye=str_ireplace('<p>','',$list_incluye);
+                    $list_incluye=str_ireplace('</p>','',$list_incluye);
 
                     $out .= '<td class="checkout_meta meta-mini">' . $list_incluye .'</td>';
                     $out .= '</tr>';
@@ -603,6 +605,8 @@ function api_youneed_contratar(){
                         $list_no_incluye .= "<li>" . $v . "</li>";        
                     }
                     $list_no_incluye .= "</ul>";
+                    $list_no_incluye=str_ireplace('<p>','',$list_no_incluye);
+                    $list_no_incluye=str_ireplace('</p>','',$list_no_incluye); 
 
                     $out .= '<td class="checkout_meta meta-mini">' . $list_no_incluye .'</td>';
                 $out .= '</tr>';
