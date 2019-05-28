@@ -792,6 +792,10 @@ function api_youneed_filtro_servicio(){
         $servicio_actual = $_SESSION['servicio_id'];
     }
     
+    if(isset($_REQUEST['categoria'])){
+        $categoria_actual = $_POST['categoria'];
+    }
+
     $ch = curl_init();
     
     curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $categoria_actual . "&ordenado=true");
@@ -825,7 +829,12 @@ function api_youneed_filtro_servicio(){
     $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-servicio\').submit();"">Filtrar</a>';
     $text .= '</form>';
     $text .= '</div>';
-    return $text;
+    if(wp_doing_ajax()){
+        echo $text;
+        exit();
+    }else{
+        return $text;
+    }
 }
 add_shortcode( 'api_youneed_filtro_servicio', 'api_youneed_filtro_servicio' );
 
