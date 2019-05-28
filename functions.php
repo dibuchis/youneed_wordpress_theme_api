@@ -586,7 +586,7 @@ function api_youneed_contratar(){
                     $incluye = explode(",",$_servicio->servicio->incluye);
 
                     $list_incluye = "<ul>";
-                    foreach($servicios as $k => $v){
+                    foreach($incluye as $k => $v){
                         $list_incluye .= "<li>" . $v . "</li>";        
                     }
                     $list_incluye .= "</ul>";
@@ -599,7 +599,7 @@ function api_youneed_contratar(){
                     $no_incluye = explode(",",$_servicio->servicio->no_incluye);
 
                     $list_no_incluye = "<ul>";
-                    foreach($servicios as $k => $v){
+                    foreach($no_incluye as $k => $v){
                         $list_no_incluye .= "<li>" . $v . "</li>";        
                     }
                     $list_no_incluye .= "</ul>";
