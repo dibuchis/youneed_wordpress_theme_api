@@ -540,15 +540,23 @@ function api_youneed_contratar(){
         $out .= '<div class="fusion-builder-row fusion-row ">';
         $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         
-        $out .= '<h2>Checkout</h2>';
         $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
+        $out .= '<h2>Checkout</h2>';
+        $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
             
                 $out .= '<input id="asociado_id" type="hidden" name="Pedido[asociado_id]" value="' . $asociado_id . '">';
                 $out .= '<input id="cliente_id" type="hidden" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
                 $out .= '<input id="servicio_id" type="hidden" name="Pedido[servicio_id]" value="' . $servicio_id . '">';
                 $out .= '<input id="valor_total" type="hidden" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
-            
+                
+            $out .= '<label>Método de pago</label>';
+            $out .= '<select id="metodo_de_pago" name="Pedido[metodo_de_pago]" >';
+                $out .= '<option value="tarjeta">Tarjeta de Crédito</option>';
+                $out .= '<option value="efectivo">Efectivo</option>';
+                $out .= '<option value="deposito">Depósito</option>';
+                $out .= '<option value="transferencia">Transferencia</option>';
+            $out .= '</select>';
             // AGREGAR COORDENADAS DE API GEOREFERENCIAL !!!!!
 			// $out .= '<input id="georeferencia" type="hidden" name="georeferencia" value="' . $_POST["servicio_id"] . '">';
 
