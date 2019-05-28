@@ -235,6 +235,7 @@ function api_youneed_asociados(){
     if($asoc){
         
         $out = '<div class="catalogo-asociados" id="asociados-youneed">';    
+        $out .= $_SESSION['servicio_id'];    
         //$out .= '<h2>Listado de Servicios</h2>';  
         
         foreach ($asoc as $key => $value) {
@@ -770,7 +771,7 @@ function api_youneed_filtro_servicio(){
         $categoria_actual = $_SESSION['categoria_actual'];
     }
     
-    if(isset($_SESSION['servicio_id']) && !wp_doing_ajax()){
+    if(isset($_SESSION['servicio_id'])){
         $servicio_actual = $_SESSION['servicio_id'];
     }
     
