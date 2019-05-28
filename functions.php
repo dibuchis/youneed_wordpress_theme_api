@@ -583,7 +583,7 @@ function api_youneed_contratar(){
             $out .= '<table class="checkout-asoc-table" style="margin-bottom:35px;">';
             $out .= '<tbody>';
                 $out .= '<tr>';
-                    $out .= '<td rowspan="2"><img width="80" src="' . $asociado->imagen . '"> </td>';
+                    $out .= '<td class="meta-image-asoc" rowspan="2"><img width="80" src="' . $asociado->imagen . '"> </td>';
                     $out .= '<td>Código</td>';
                     $out .= '<td>Nombre</td>';
                     $out .= '<td>Apellido</td>';
