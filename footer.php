@@ -75,7 +75,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</body>
 <script>
 	jQuery(document).ready(function(){
-		try {
+		// try {
 		
 			var elLog = document.querySelector("a[title='login']");
 			
@@ -90,9 +90,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				return false;
 			});
 		
-		} catch (error) {
+		// } catch (error) {
 			
-		}
+		// }
 
 	});
 		
