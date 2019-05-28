@@ -550,7 +550,7 @@ function api_youneed_contratar(){
                 $out .= '<input id="servicio_id" type="hidden" name="Pedido[servicio_id]" value="' . $servicio_id . '">';
                 $out .= '<input id="valor_total" type="hidden" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
                 
-            $out .= '<label>Método de pago</label>';
+            $out .= '<label>Método de pago </label>';
             $out .= '<select id="metodo_de_pago" name="Pedido[metodo_de_pago]" >';
                 $out .= '<option value="tarjeta">Tarjeta de Crédito</option>';
                 $out .= '<option value="efectivo">Efectivo</option>';
