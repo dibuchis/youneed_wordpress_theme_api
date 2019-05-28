@@ -726,7 +726,16 @@ function api_youneed_filtro_ciudades(){
 }
 add_shortcode( 'api_youneed_filtro_ciudades', 'api_youneed_filtro_ciudades' );
 
-function api_youneed_filtro_categoria(){
+function api_youneed_filtro_categoria($atts = [], $content = null, $tag = ''){
+
+        // normalize attribute keys, lowercase
+        $atts = array_change_key_case((array)$atts, CASE_LOWER);
+        
+        // override default attributes with user attributes
+        $wporg_atts = shortcode_atts([
+            'AjaxServicio' => false,
+        ], $atts, $tag);
+
         $text = "<div class='filtro-wrapper'>"; 
         $text .= "<h3 class='filtro-titulo'><b>Categortía</b></h3>"; 
         $ch = curl_init();
@@ -761,9 +770,65 @@ function api_youneed_filtro_categoria(){
                 }
             }
         $text .= '</select>';
-        $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
+        
+        if($wporg_atts['AjaxServicio']){
+            $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" id="filtroCategoriaAjax" onclick="loadServiciosFilter()">Filtrar</a>';
+        }else{
+            $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-categoria\').submit();"">Filtrar</a>';
+        }
         $text .= '</form>';
         $text .= '</div>';
         return $text;
 }
 add_shortcode( 'api_youneed_filtro_categoria', 'api_youneed_filtro_categoria' );
+
+
+function api_youneed_filtro_servicio(){
+    $text = "<div class='filtro-wrapper'>"; 
+    $text .= "<h3 class='filtro-titulo'><b>Servicio</b></h3>"; 
+    $ch = curl_init();
+    $categoria_actual = 0;
+    $servicio_actual = 0;
+
+    if(isset($_SESSION['categoria_actual'])){
+        $categoria_actual = $_SESSION['categoria_actual'];
+    }
+
+    if(isset($_SESSION['servicio_id'])){
+        $servicio_actual = $_SESSION['servicio_id'];
+    }
+    
+    curl_setopt($ch, CURLOPT_URL, 'https://app.youneed.com.ec/ajax/listadoservicios?depdrop_parents=' . $categoria_actual . '&ordenado=true');
+    
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    
+    $data = curl_exec($ch);
+    
+    curl_close($ch);
+    
+    $result = json_decode($data);
+    
+    $servicios = $result->output;
+    
+    //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
+    $text .= '<form method="post" id="filtro-servicio" >';
+    $text .= '<select id="filtro-servicio-data" name="filtro-servicio" >';
+    foreach($servicios as $key => $val){
+            if($servicio_actual == $val->id){
+                $text .= '<option value="' . $val->id . '" selected>' . $val->nombre . '</option>';
+            }else{
+                $text .= '<option value="' . $val->id . '">' . $val->nombre . '</option>';
+            }
+        }
+    $text .= '</select>';
+    $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-servicio\').submit();"">Filtrar</a>';
+    $text .= '</form>';
+    $text .= '</div>';
+    return $text;
+}
+add_shortcode( 'api_youneed_filtro_servicio', 'api_youneed_filtro_servicio' );
+
+add_action('wp_ajax_folder_contents', 'api_youneed_filtro_servicio');
+add_action('wp_ajax_nopriv_folder_contents', 'api_youneed_filtro_servicio');
