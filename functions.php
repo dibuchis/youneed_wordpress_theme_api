@@ -591,7 +591,6 @@ function api_youneed_contratar(){
                     $out .= '<td>Calificación</d>';
                 $out .= '</tr>';
                 $out .= '<tr>';
-                    $out .= '<td></td>';
                     $out .= '<td>' . $asociado->id . '</td>';
                     $out .= '<td>' . $asociado->nombres . '</td>';
                     $out .= '<td>' . $asociado->apellidos . '</d>';
