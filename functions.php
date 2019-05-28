@@ -369,67 +369,69 @@ function api_youneed_asociado(){
 			$srv_id = $_SESSION['servicio_id'];
 		}
         
-        $out = '<div id="panel-asociado" class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: #f3f3f3;background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
+        $out = '<div id="panel-asociado" class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: #f3f3f3;background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;">';
+        $out .= '<div class="fusion-builder-row fusion-row ">';
+        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         $out .= '<h2>Asociado</h2>';
         $out .= '<hr>';
-        $out .= '<div class="panel-asociado">';
-        $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
-            //$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
-            
-                $out .= '<input id="asociado_id" type="hidden" name="asociado_id" value="' . $asociado->id . '">';
-                $out .= '<input id="cliente_id" type="hidden" name="cliente_id" value="' . $user->usuario->id . '">';
-                $out .= '<input id="servicio_id" type="hidden" name="servicio_id" value="' . $srv_id . '">';
-   
-            $out .= '<div class="left-panel">';
-                $out .= '<img class="asociado-vista-img" src="' . $asociado->imagen . '">';
-            $out .= '</div>';
-            
-            $out .= '<div class="right-panel">';
+            $out .= '<div class="panel-asociado">';
+            $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
+                //$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
                 
-                $out .= '<label><b>Nombre</b></label>';
-                $out .= '<p><span>' . ucwords(strtolower($asociado->nombres)) . " " . ucwords(strtolower($asociado->apellidos)) . '</span></p>';
-                
-                $out .= '<div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>';
-                
-                $out .= '<label><b>Estado</b></label>';
-                $out .= '<p><span>' . $asociado->estado . '</span></p>';
-                
-                
-                //$out .= '<h4>Disponibilidad</h4>';
-
-                $out .= '<div class="fusion-builder-row fusion-row">';
-                
-                    $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-7 fusion-one-half fusion-column-last 1_2">';
-                        $out .= '<label><b>Días</b></label>';
-                        $out .= '<p><span>' . $dias[$asociado->dias_trabajo] . '</span></p>';
-                        
-                        $out .= '<label><b>Horas</b></label>';
-                        $out .= '<p><span>' . $horarios[$asociado->horarios_trabajo] . '</span></p>';
-                    $out .= '</div>';
-                    
-                    $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-7 fusion-one-half fusion-column-last 1_2">';
-                        $out .= '<label><b>País</b></label>';
-                        $out .= '<p><span>' . $asociado->pais->nombre . '</span></p>';
-                        
-                        $out .= '<label><b>Ciudad</b></label>';
-                        $out .= '<p><span>' . $asociado->ciudad->nombre . '</span></p>';
-                    $out .= '</div>'; 
-                
-                $out .= '</div>'; 
-                
-                $out .= '<div class="meta meta-link">';
-                    $out .= '<a class="ver-asociados btn-asociados btn-cancelar" href="javascript:history.back()">Cancelar</a>';
-                    $out .= '<a href="javascript:{}" onclick="document.getElementById(\'contratar-asociado\').submit();" class="ver-asociados btn-asociados" >Contratar</a>';
+                    $out .= '<input id="asociado_id" type="hidden" name="asociado_id" value="' . $asociado->id . '">';
+                    $out .= '<input id="cliente_id" type="hidden" name="cliente_id" value="' . $user->usuario->id . '">';
+                    $out .= '<input id="servicio_id" type="hidden" name="servicio_id" value="' . $srv_id . '">';
+    
+                $out .= '<div class="left-panel">';
+                    $out .= '<img class="asociado-vista-img" src="' . $asociado->imagen . '">';
                 $out .= '</div>';
+                
+                $out .= '<div class="right-panel">';
+                    
+                    $out .= '<label><b>Nombre</b></label>';
+                    $out .= '<p><span>' . ucwords(strtolower($asociado->nombres)) . " " . ucwords(strtolower($asociado->apellidos)) . '</span></p>';
+                    
+                    $out .= '<div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>';
+                    
+                    $out .= '<label><b>Estado</b></label>';
+                    $out .= '<p><span>' . $asociado->estado . '</span></p>';
+                    
+                    
+                    //$out .= '<h4>Disponibilidad</h4>';
+
+                    $out .= '<div class="fusion-builder-row fusion-row">';
+                    
+                        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-7 fusion-one-half fusion-column-last 1_2">';
+                            $out .= '<label><b>Días</b></label>';
+                            $out .= '<p><span>' . $dias[$asociado->dias_trabajo] . '</span></p>';
+                            
+                            $out .= '<label><b>Horas</b></label>';
+                            $out .= '<p><span>' . $horarios[$asociado->horarios_trabajo] . '</span></p>';
+                        $out .= '</div>';
+                        
+                        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-7 fusion-one-half fusion-column-last 1_2">';
+                            $out .= '<label><b>País</b></label>';
+                            $out .= '<p><span>' . $asociado->pais->nombre . '</span></p>';
+                            
+                            $out .= '<label><b>Ciudad</b></label>';
+                            $out .= '<p><span>' . $asociado->ciudad->nombre . '</span></p>';
+                        $out .= '</div>'; 
+                    
+                    $out .= '</div>'; 
+                    
+                    $out .= '<div class="meta meta-link">';
+                        $out .= '<a class="ver-asociados btn-asociados btn-cancelar" href="javascript:history.back()">Cancelar</a>';
+                        $out .= '<a href="javascript:{}" onclick="document.getElementById(\'contratar-asociado\').submit();" class="ver-asociados btn-asociados" >Contratar</a>';
+                    $out .= '</div>';
+                $out .= '</div>';
+                
+                $out .= '<hr>';
+                
+                $out .= '<div class="comment-panel">';
+                    $out .= '<h4>Comentarios</h4>';
+                $out .= '</div>';
+            $out .= '</form>';
             $out .= '</div>';
-            
-            $out .= '<hr>';
-            
-            $out .= '<div class="comment-panel">';
-                $out .= '<h4>Comentarios</h4>';
-            $out .= '</div>';
-        $out .= '</form>';
-        $out .= '</div>';
         $out .= '</div>';
         $out .= '</div>';
         $out .= '</div>';
@@ -534,7 +536,10 @@ function api_youneed_contratar(){
 
         $_servicio = json_decode($dataRes);
 
-        $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><form class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
+        $out = '<div id="panel-asociado" class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: #f3f3f3;background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;">';
+        $out .= '<div class="fusion-builder-row fusion-row ">';
+        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
+        
         $out .= '<h2>Checkout</h2>';
         $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
@@ -549,16 +554,14 @@ function api_youneed_contratar(){
 
             $fecha_actual = date("Y/m/d H:i");
 
-            $out .= '<h2>Fecha de Servicio</h2>';
+            $out .= '<h2><center>Fecha de Servicio</center></h2>';
+            $out .= '<hr>';
             $out .= '<div style="overflow:hidden;margin-bottom:35px;"><div class="form-group"><div class="row"><div class="col-md-8 col-md-offset-2"><div id="datetimepicker12"></div></div></div></div>';
             $out .= '<script>var today = new Date(); jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true, locale: "es", minDate: today });</script>';
             $out .= '<input type="hidden" id="fecha_servicio" name="Pedido[fecha_para_servicio]" class="datepickerinput" >';
             $out .= '</div>';
-
-
-
-            
-            $out .= '<h2>Datos de Servicio</h2>';
+            $out .= '<h2><center>Datos de Servicio</center></h2>';
+            $out .= '<hr>';
             $out .= '<table class="table-1 checkout-table"  style="margin-bottom:35px;">';
                 $out .= '<tbody>';
                     $out .= '<tr>';
@@ -567,7 +570,6 @@ function api_youneed_contratar(){
                         $out .= '<th>Descripción</th>';
                         $out .= '<th>Valor</th>';
                     $out .= '</tr>';
-                    
                     $out .= '<tr>';
                         $out .= '<td class="checkout_meta"><img width="50" src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
                         $out .= '<td class="checkout_meta">' . $_servicio->servicio->id .'</td>';
@@ -576,7 +578,6 @@ function api_youneed_contratar(){
                     $out .= '</tr>';
                 $out .= '</tbody>';
             $out .= '</table>';
-
             $out .= '<table class="table-2" style="margin-bottom:35px;">';
             $out .= '<tbody>';
                 $out .= '<tr>';
