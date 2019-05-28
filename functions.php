@@ -560,22 +560,24 @@ function api_youneed_contratar(){
             
             $out .= '<h2>Datos de Servicio</h2>';
             $out .= '<table class="table-1">';
-                $out .= '<tr>';
+                $out .= '<tbody>';
+                    $out .= '<tr>';
                     $out .= '<th></th>';
                     $out .= '<th>Código</th>';
                     $out .= '<th>Descripción</th>';
                     $out .= '<th>Incluye</th>';
                     $out .= '<th>No Incluye</th>';
                     $out .= '<th>Valor</th>';
-                $out .= '</tr>';
-                
-                $out .= '<tr>';
-                    $out .= '<td class="checkot_meta"><img src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
-                    $out .= '<td class="checkot_meta">' . $_servicio->servicio->id .'</td>';
-                    $out .= '<td class="checkot_meta">' . $_servicio->servicio->nombre .'</td>';
-                    $out .= '<td class="checkot_meta meta-mini">' . $_servicio->servicio->incluye .'</td>';
-                    $out .= '<td class="checkot_meta meta-mini">' . $_servicio->servicio->no_incluye .'</td>';
-                    $out .= '<td class="checkot_meta">' . $_servicio->servicio->total .'</td>';
+                    $out .= '</tr>';
+                    
+                    $out .= '<tr>';
+                    $out .= '<td class="checkout_meta"><img src="' . $_servicio->servicio->imagen .'" alt="' . $_servicio->servicio->nombre . '"></td>';
+                    $out .= '<td class="checkout_meta">' . $_servicio->servicio->id .'</td>';
+                    $out .= '<td class="checkout_meta">' . $_servicio->servicio->nombre .'</td>';
+                    $out .= '<td class="checkout_meta meta-mini">' . $_servicio->servicio->incluye .'</td>';
+                    $out .= '<td class="checkout_meta meta-mini">' . $_servicio->servicio->no_incluye .'</td>';
+                    $out .= '<td class="checkout_meta">' . $_servicio->servicio->total .'</td>';
+                $out .= '</tbody>';
                 $out .= '</tr>';
             $out .= '</table>';
 
