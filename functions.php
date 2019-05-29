@@ -389,7 +389,7 @@ function api_youneed_asociado(){
                         
                         $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-7 fusion-one-half fusion-column-last 1_2">';
                             $out .= '<label><b>Reputación</b></label>';
-                            $out .= '<div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star active"></i></div>';
+                            $out .= '<div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star active"></i></div>';
                         $out .= '</div>';
                     
                     // $out .= '<label><b>Estado</b></label>';

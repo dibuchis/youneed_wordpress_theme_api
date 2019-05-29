@@ -498,9 +498,9 @@ padding:20px;
 
 /** RATING **/
 
-.meta-rating{
+/* .meta-rating{ */
   /*     background-color:rgb(56,67,102);  */
-      max-width:100px;
+      /* max-width:100px;
       padding:4px 6px;
       border-radius: 3px;
   }
@@ -526,7 +526,7 @@ padding:20px;
   .meta-rating .fas.active{
       opacity: 1;
       transform: scale(1.2);
-  }
+  } */
 
 /* SPINNER */
 
