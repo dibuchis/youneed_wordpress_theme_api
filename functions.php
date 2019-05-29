@@ -384,10 +384,11 @@ function api_youneed_asociado(){
                     $out .= '<label><b>Nombre</b></label>';
                     $out .= '<p><span>' . ucwords(strtolower($asociado->nombres)) . " " . ucwords(strtolower($asociado->apellidos)) . '</span></p>';
                     
+                    $out .= '<label><b>Reputación</b></label>';
                     $out .= '<div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>';
                     
-                    $out .= '<label><b>Estado</b></label>';
-                    $out .= '<p><span>' . $asociado->estado . '</span></p>';
+                    // $out .= '<label><b>Estado</b></label>';
+                    // $out .= '<p><span>' . $asociado->estado . '</span></p>';
                     
                     
                     //$out .= '<h4>Disponibilidad</h4>';
