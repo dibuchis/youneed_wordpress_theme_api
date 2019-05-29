@@ -380,18 +380,26 @@ function api_youneed_asociado(){
                 $out .= '</div>';
                 
                 $out .= '<div class="right-panel">';
-                    
-                    $out .= '<label><b>Nombre</b></label>';
-                    $out .= '<p><span>' . ucwords(strtolower($asociado->nombres)) . " " . ucwords(strtolower($asociado->apellidos)) . '</span></p>';
-                    
-                    $out .= '<label><b>Reputación</b></label>';
-                    $out .= '<div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>';
+                    $out .= '<div class="fusion-builder-row fusion-row">';
+                        
+                        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-7 fusion-one-half fusion-column-last 1_2">';
+                            $out .= '<label><b>Nombre</b></label>';
+                            $out .= '<p><span>' . ucwords(strtolower($asociado->nombres)) . " " . ucwords(strtolower($asociado->apellidos)) . '</span></p>';
+                        $out .= '</div>';
+                        
+                        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_2 fusion-builder-column-7 fusion-one-half fusion-column-last 1_2">';
+                            $out .= '<label><b>Reputación</b></label>';
+                            $out .= '<div class="meta meta-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></div>';
+                        $out .= '</div>';
                     
                     // $out .= '<label><b>Estado</b></label>';
                     // $out .= '<p><span>' . $asociado->estado . '</span></p>';
                     
                     
                     //$out .= '<h4>Disponibilidad</h4>';
+                    $out .= '</div>';
+                    
+                    $out .= '<hr>';
 
                     $out .= '<div class="fusion-builder-row fusion-row">';
                     
