@@ -566,7 +566,7 @@ function api_youneed_contratar(){
         $out .= '<div class="fusion-builder-row fusion-row ">';
         $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
             $out .= '<label>Método de pago </label><br>';
-            $out .= '<select id="metodo_de_pago" name="Pedido[metodo_de_pago]" >';
+            $out .= '<select id="metodo_de_pago" name="Pedido[forma_pago]" >';
             $out .= '<option value="tarjeta">Tarjeta de Crédito</option>';
             $out .= '<option value="efectivo">Efectivo</option>';
             $out .= '<option value="deposito">Depósito</option>';
