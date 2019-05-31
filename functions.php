@@ -486,8 +486,10 @@ function api_youneed_empty_cart(){
 function api_youneed_check_cart(){
     if(isset($_SESSION["pedido_asociado_id"]) && isset($_SESSION["pedido_servicio_id"])){
         echo true;
+        exit();
     }else{
         echo false;
+        exit();
     }
 
 }
