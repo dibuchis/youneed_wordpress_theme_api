@@ -476,6 +476,8 @@ function api_youneed_empty_cart(){
     }
 
 }
+add_action('wp_ajax_api_youneed_empty_cart', 'api_youneed_empty_cart');
+add_action('wp_ajax_nopriv_api_youneed_empty_cart', 'api_youneed_empty_cart');
 
 /**
  *
