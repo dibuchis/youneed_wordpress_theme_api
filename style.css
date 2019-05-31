@@ -502,7 +502,24 @@ input.btn-asociados {
   cursor:pointer;
 }
 .active-cart {
-  color: #32d030;
+  color: #e6a13e;
+}
+.items-in-cart {
+  position: absolute;
+  margin-top: -9px;
+  transform: translateX(10px);
+  display: flex;
+  width: 15px;
+  height: 15px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background-color: #117c8f;
+  border-radius: 100%;
+  font-family: arial;
+  font-size: 10px;
+  font-weight: 800;
+  color: #ffffff;
 }
 /** RATING **/
 
