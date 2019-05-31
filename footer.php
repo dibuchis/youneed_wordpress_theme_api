@@ -107,4 +107,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         });
 </script>
 
+
+<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js"></script>
+
 </html>
