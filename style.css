@@ -499,6 +499,7 @@ padding:20px;
 input.btn-asociados {
   border: none;
   border-radius: 8px;
+  cursor:pointer;
 }
 /** RATING **/
 
