@@ -424,7 +424,7 @@ function api_youneed_asociado(){
                     $out .= '<div class="meta meta-link">';
                         $out .= '<a class="ver-asociados btn-asociados btn-cancelar" href="javascript:history.back()">Cancelar</a>';
                         //$out .= '<a href="javascript:{}" onclick="document.getElementById(\'contratar-asociado\').submit();" class="ver-asociados btn-asociados" >Contratar</a>';
-                        $out .= '<input type="submit" class="ver-asociado btn-asociados" value="Contratar" id="precontratar-asociado">';
+                        $out .= '<input type="submit" class="ver-asociados btn-asociados" value="Contratar" id="precontratar-asociado">';
                     $out .= '</div>';
                 $out .= '</div>';
                 
