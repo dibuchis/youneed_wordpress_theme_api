@@ -501,6 +501,9 @@ input.btn-asociados {
   border-radius: 8px;
   cursor:pointer;
 }
+.active-cart {
+  color: #32d030;
+}
 /** RATING **/
 
 /* .meta-rating{ */
