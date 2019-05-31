@@ -496,6 +496,10 @@ padding:20px;
   box-shadow: 6px 6px 5px -5px rgba(0,0,0,0.18);
 }
 
+input.btn-asociados {
+  border: none;
+  border-radius: 8px;
+}
 /** RATING **/
 
 /* .meta-rating{ */
