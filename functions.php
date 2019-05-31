@@ -423,7 +423,8 @@ function api_youneed_asociado(){
                     
                     $out .= '<div class="meta meta-link">';
                         $out .= '<a class="ver-asociados btn-asociados btn-cancelar" href="javascript:history.back()">Cancelar</a>';
-                        $out .= '<a href="javascript:{}" onclick="document.getElementById(\'contratar-asociado\').submit();" class="ver-asociados btn-asociados" >Contratar</a>';
+                        //$out .= '<a href="javascript:{}" onclick="document.getElementById(\'contratar-asociado\').submit();" class="ver-asociados btn-asociados" >Contratar</a>';
+                        $out .= '<input class="ver-asociado btn-asociados" value="Contratar" id="precontratar-asociado">';
                     $out .= '</div>';
                 $out .= '</div>';
                 
@@ -458,6 +459,41 @@ function api_youneed_asociado(){
     
 }
 add_shortcode( 'api_youneed_asociado', 'api_youneed_asociado' );
+
+/**
+ *
+ * API - YouNeed
+ * LIMPIAR CARRITO
+ * 
+ */
+function api_youneed_empty_cart(){
+    if(isset($_SESSION["pedido_asociado_id"]) && isset($_SESSION["pedido_servicio_id"])){
+        unset ($_SESSION["pedido_asociado_id"]); 
+        unset ($_SESSION["pedido_servicio_id"]);
+        echo true;
+    }else{
+        echo false;
+    }
+
+}
+
+/**
+ *
+ * API - YouNeed
+ * VERIFICAR CARRITO
+ * 
+ */
+function api_youneed_check_cart(){
+    if(isset($_SESSION["pedido_asociado_id"]) && isset($_SESSION["pedido_servicio_id"])){
+        echo true;
+    }else{
+        echo false;
+    }
+
+}
+
+add_action('wp_ajax_api_youneed_check_cart', 'api_youneed_check_cart');
+add_action('wp_ajax_nopriv_api_youneed_check_cart', 'api_youneed_check_cart');
 
 /**
  *
