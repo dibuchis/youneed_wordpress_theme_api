@@ -603,6 +603,7 @@ function api_youneed_contratar(){
         $out .= '<h2><center>Checkout</center></h2>';
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
             
+                $out .= '<input id="fn" type="hidden" name="fn" value="ContratarAsociado">';
                 $out .= '<input id="asociado_id" type="hidden" name="Pedido[asociado_id]" value="' . $asociado_id . '">';
                 $out .= '<input id="cliente_id" type="hidden" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
                 $out .= '<input id="servicio_id" type="hidden" name="Pedido[servicio_id]" value="' . $servicio_id . '">';
