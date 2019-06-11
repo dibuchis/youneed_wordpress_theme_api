@@ -619,6 +619,8 @@ function api_youneed_contratar(){
             $out .= '<option value="3">Depósito</option>';
             $out .= '<option value="4">Transferencia</option>';
             $out .= '</select>';
+            $out .= '<label>Tipo de servicio </label><br>';
+            $out .= '<input type="checkbox" name="tipo_atencion" checked data-toggle="toggle" data-on="Normal" data-off="Urgente" data-onstyle="success" data-offstyle="danger">';
         $out .= '</div>';
         $out .= '</div>';
         $out .= '<div class="fusion-builder-row fusion-row ">';
