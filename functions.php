@@ -512,8 +512,8 @@ function api_youneed_contratar(){
     wp_register_style('glyphicons', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/glyphicons/css/bootstrap.min.css');
     wp_enqueue_style( 'glyphicons' );
 
-    wp_register_script('load-maps', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/maps-api.js', array('jquery'),'3.4', true);
-    wp_enqueue_script('load-maps');
+    wp_register_script('load-maps-v2', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/maps-api.js', array('jquery'),'3.4', true);
+    wp_enqueue_script('load-maps-v2');
 
 
     wp_register_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA5IQx7cDfchTxNY-9ZNCcJFWvqfC-YLuA&libraries=places&callback=initAutocomplete');
@@ -653,7 +653,7 @@ function api_youneed_contratar(){
             
             $out .= '<div class="fusion-builder-row fusion-row">';
                 $out .= '<div class="map-wrapper">';
-                $out .= '<input id="pac-input" class="controls" type="text" placeholder="Search Box">';
+                $out .= '<input id="pac-input" class="controls" type="text" placeholder="Buscar Ubicación">';
                 $out .= '<div id="map" class="hidden"></div>';
                     
                 $out .= '<input name="latitud" id="lat-map">';
