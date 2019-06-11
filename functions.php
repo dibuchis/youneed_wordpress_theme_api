@@ -512,8 +512,8 @@ function api_youneed_contratar(){
     wp_register_style('glyphicons', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/glyphicons/css/bootstrap.min.css');
     wp_enqueue_style( 'glyphicons' );
 
-    wp_register_script('load-maps-v8', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/maps-api.js', array('jquery'),'3.4', true);
-    wp_enqueue_script('load-maps-v8');
+    wp_register_script('load-maps-v9', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/maps-api.js', array('jquery'),'3.4', true);
+    wp_enqueue_script('load-maps-v9');
 
 
     wp_register_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA5IQx7cDfchTxNY-9ZNCcJFWvqfC-YLuA&libraries=places&callback=initAutocomplete');
@@ -659,10 +659,10 @@ function api_youneed_contratar(){
                 $out .= '<input id="pac-input" class="controls" type="text" placeholder="Buscar Ubicación">';
                 $out .= '<div id="map" class="hidden"></div>';
                     
-                $out .= '<input name="Pedido[latitud]" id="lat-map" value="">';
-                $out .= '<input name="Pedido[longitud]" id="lng-map" value="">';
-                $out .= '<input name="Pedido[direccion_completa]" id="place-map" value="">';
-                $out .= '<input name="Pedido[codigo_postal]" id="postal-map" value="">';
+                $out .= '<input type="text" name="Pedido[latitud]" id="lat-map" value="">';
+                $out .= '<input type="text" name="Pedido[longitud]" id="lng-map" value="">';
+                $out .= '<input type="text" name="Pedido[direccion_completa]" id="place-map" value="">';
+                $out .= '<input type="text" name="Pedido[codigo_postal]" id="postal-map" value="">';
                 $out .= '</div>';
             $out .= '</div>';
 
