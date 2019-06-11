@@ -512,8 +512,8 @@ function api_youneed_contratar(){
     wp_register_style('glyphicons', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/glyphicons/css/bootstrap.min.css');
     wp_enqueue_style( 'glyphicons' );
 
-    wp_register_script('load-maps-v4', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/maps-api.js', array('jquery'),'3.4', true);
-    wp_enqueue_script('load-maps-v4');
+    wp_register_script('load-maps-v6', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/maps-api.js', array('jquery'),'3.4', true);
+    wp_enqueue_script('load-maps-v6');
 
 
     wp_register_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA5IQx7cDfchTxNY-9ZNCcJFWvqfC-YLuA&libraries=places&callback=initAutocomplete');
