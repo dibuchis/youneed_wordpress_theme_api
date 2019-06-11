@@ -594,10 +594,11 @@ function api_youneed_contratar(){
         $asociado = json_decode($dataAsoc);
 
         $out = '<div id="panel-checkout" class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;">';
+        $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
+        
         $out .= '<div class="fusion-builder-row fusion-row ">';
         $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         
-        $out .= '<form id="contratar-asociado" method="post" action="https://youneed.com.ec/contratar/" >';
         // $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
         $out .= '<h2><center>Checkout</center></h2>';
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
@@ -658,10 +659,10 @@ function api_youneed_contratar(){
                 $out .= '<input id="pac-input" class="controls" type="text" placeholder="Buscar Ubicación">';
                 $out .= '<div id="map" class="hidden"></div>';
                     
-                $out .= '<input name="Pedido[latitud]" id="lat-map">';
-                $out .= '<input name="Pedido[longitud]" id="lng-map">';
-                $out .= '<input name="Pedido[direccion_completa]" id="place-map">';
-                $out .= '<input name="Pedido[codigo_postal]" id="postal-map">';
+                $out .= '<input name="Pedido[latitud]" id="lat-map" value="">';
+                $out .= '<input name="Pedido[longitud]" id="lng-map" value="">';
+                $out .= '<input name="Pedido[direccion_completa]" id="place-map" value="">';
+                $out .= '<input name="Pedido[codigo_postal]" id="postal-map" value="">';
                 $out .= '</div>';
             $out .= '</div>';
 
@@ -736,11 +737,12 @@ function api_youneed_contratar(){
             $out .= '<hr>';
             
             $out .= '<a class="ver-asociados btn-asociados" onclick="contratarAsociado(event)" href="#">Contratar</a>';
+            $out .= '</div>';
+            $out .= '</div>';
+        
         $out .= '</form>';
         $out .= '</div>';
-        $out .= '</div>';
-        $out .= '</div>';
-        $out .= '<script></script>';
+        //$out .= '<script></script>';
     }else{
         $out = '<div class="fusion-fullwidth fullwidth-box hundred-percent-fullwidth non-hundred-percent-height-scrolling" style="background-color: #f3f3f3;background-position: center center;background-repeat: no-repeat;padding-top:45px;padding-right:8%;padding-bottom:45px;padding-left:8%;"><div class="fusion-builder-row fusion-row "><div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
         $out .= '<h2>Acceso para usuarios</h2>';
