@@ -659,10 +659,10 @@ function api_youneed_contratar(){
                 $out .= '<input id="pac-input" class="controls" type="text" placeholder="Buscar Ubicación">';
                 $out .= '<div id="map" class="hidden"></div>';
                     
-                $out .= '<input type="text" name="Pedido[latitud]" id="lat-map" value="">';
-                $out .= '<input type="text" name="Pedido[longitud]" id="lng-map" value="">';
-                $out .= '<input type="text" name="Pedido[direccion_completa]" id="place-map" value="">';
-                $out .= '<input type="text" name="Pedido[codigo_postal]" id="postal-map" value="">';
+                $out .= '<input type="text" name="Pedido[latitud]" id="lat-map">';
+                $out .= '<input type="text" name="Pedido[longitud]" id="lng-map">';
+                $out .= '<input type="text" name="Pedido[direccion_completa]" id="place-map">';
+                $out .= '<input type="text" name="Pedido[codigo_postal]" id="postal-map">';
                 $out .= '</div>';
             $out .= '</div>';
 
