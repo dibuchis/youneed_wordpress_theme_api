@@ -99,7 +99,6 @@ function api_youneed_categorias(){
     
     //var_dump($cats);
     
-    
     wp_enqueue_script('load-owl-carrousel-api');
     
     return $out;
@@ -513,6 +512,8 @@ function api_youneed_contratar(){
     wp_register_style('glyphicons', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/glyphicons/css/bootstrap.min.css');
     wp_enqueue_style( 'glyphicons' );
 
+   wp_register_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA5IQx7cDfchTxNY-9ZNCcJFWvqfC-YLuA&libraries=places&callback=initAutocomplete');
+
     $user = null;
     $servicio_id = null;
     $asociado_id = null;
@@ -642,7 +643,22 @@ function api_youneed_contratar(){
 
             $out .= '</div>';
             $out .= '</div>';
+
             
+            $out .= '<hr>';
+            
+            $out .= '<div class="fusion-builder-row fusion-row">';
+                $out .= '<div class="map-wrapper">';
+                $out .= '<input id="pac-input" class="controls" type="text" placeholder="Search Box">';
+                $out .= '<div id="map" class="hidden"></div>';
+                    
+                $out .= '<input name="latitud" id="lat-map">';
+                $out .= '<input name="longitud" id="lng-map">';
+                $out .= '</div>';
+            $out .= '</div>';
+
+            $out .= '<hr>';
+
             $fecha_actual = date("Y/m/d H:i");
             
             $out .= '<div class="fusion-builder-row fusion-row ">';
@@ -728,6 +744,7 @@ function api_youneed_contratar(){
         $out .= '</div>';
         $out .= '</div>';
     }
+    wp_enqueue_script('google-maps');
     
     return $out;
 }
