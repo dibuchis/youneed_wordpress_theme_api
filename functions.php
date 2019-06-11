@@ -512,7 +512,11 @@ function api_youneed_contratar(){
     wp_register_style('glyphicons', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/glyphicons/css/bootstrap.min.css');
     wp_enqueue_style( 'glyphicons' );
 
-   wp_register_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA5IQx7cDfchTxNY-9ZNCcJFWvqfC-YLuA&libraries=places&callback=initAutocomplete');
+    wp_register_script('load-maps', 'https://youneed.com.ec/wp-content/themes/Avada-Child-Theme/lib/maps-api.js', array('jquery'),'3.4', true);
+    wp_enqueue_script('load-maps');
+
+
+    wp_register_script('google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyA5IQx7cDfchTxNY-9ZNCcJFWvqfC-YLuA&libraries=places&callback=initAutocomplete');
 
     $user = null;
     $servicio_id = null;
@@ -744,8 +748,10 @@ function api_youneed_contratar(){
         $out .= '</div>';
         $out .= '</div>';
     }
-    wp_enqueue_script('google-maps');
     
+
+    wp_enqueue_script('google-maps');
+
     return $out;
 }
 add_shortcode( 'api_youneed_contratar', 'api_youneed_contratar' );
