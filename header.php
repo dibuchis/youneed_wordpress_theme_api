@@ -55,9 +55,6 @@ if ( ! defined( 'ABSPATH' ) ) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
-	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
-	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
-
 	<script type="text/javascript">
 		var doc = document.documentElement;
 		doc.setAttribute('data-useragent', navigator.userAgent);
@@ -90,6 +87,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/bootstrap-datepicker/moment.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/bootstrap-datepicker/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+	<link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/css/bootstrap4-toggle.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.4.0/js/bootstrap4-toggle.min.js"></script>
+
 	<script>
 		function loadServiciosFilter(){
 		
