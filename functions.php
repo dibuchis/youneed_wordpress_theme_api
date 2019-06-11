@@ -604,16 +604,16 @@ function api_youneed_contratar(){
 			//$out .= '<input type="hidden" name="_csrf" value="XDB8ErUw8zD_28OF8uOJGeVszR7GuztlpYlXhhaPVNYTWDlcgFW_QZmR7rynishGig2scrH4Yg_20RnBL7cVsg==">';
             
                 $out .= '<input id="fn" type="hidden" name="fn" value="ContratarAsociado">';
-                $out .= '<input id="asociado_id" type="hidden" name="Pedido[asociado_id]" value="' . $asociado_id . '">';
-                $out .= '<input id="cliente_id" type="hidden" name="Pedido[cliente_id]" value="' . $user->usuario->id . '">';
-                $out .= '<input id="servicio_id" type="hidden" name="Pedido[servicio_id]" value="' . $servicio_id . '">';
-                $out .= '<input id="valor_total" type="hidden" name="Pedido[total]" value="' . $_servicio->servicio->total . '">';
+                $out .= '<input id="asociado_id" type="hidden" name="asociado_id" value="' . $asociado_id . '">';
+                $out .= '<input id="cliente_id" type="hidden" name="cliente_id" value="' . $user->usuario->id . '">';
+                $out .= '<input id="servicio_id" type="hidden" name="servicio_id" value="' . $servicio_id . '">';
+                $out .= '<input id="valor_total" type="hidden" name="total" value="' . $_servicio->servicio->total . '">';
         $out .= '</div>';
         $out .= '</div>';
         $out .= '<div class="fusion-builder-row fusion-row ">';
         $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
             $out .= '<label>Método de pago </label><br>';
-            $out .= '<select id="metodo_de_pago" name="Pedido[forma_pago]" >';
+            $out .= '<select id="metodo_de_pago" name="forma_pago" >';
             $out .= '<option value="1">Tarjeta de Crédito</option>';
             $out .= '<option value="2">Efectivo</option>';
             $out .= '<option value="3">Depósito</option>';
@@ -660,11 +660,11 @@ function api_youneed_contratar(){
                 $out .= '<input id="pac-input" class="controls" type="text" placeholder="Buscar Ubicación">';
                 $out .= '<div id="map" class="hidden"></div>';
                     
-                $out .= '<input type="hidden" name="Pedido[latitud]" id="lat-map">';
-                $out .= '<input type="hidden" name="Pedido[longitud]" id="lng-map">';
-                $out .= '<input type="hidden" name="Pedido[direccion_completa]" id="place-map">';
+                $out .= '<input type="hidden" name="latitud" id="lat-map">';
+                $out .= '<input type="hidden" name="longitud" id="lng-map">';
+                $out .= '<input type="hidden" name="direccion_completa" id="place-map">';
                 $out .= '<input type="text" id="place-map-ref">';
-                $out .= '<input type="hidden" name="Pedido[codigo_postal]" id="postal-map">';
+                $out .= '<input type="hidden" name="codigo_postal" id="postal-map">';
                 $out .= '</div>';
             $out .= '</div>';
 
@@ -678,7 +678,7 @@ function api_youneed_contratar(){
             $out .= '<h2><center>Fecha de Servicio</center></h2>';
             $out .= '<div style="overflow:hidden;margin-bottom:35px;"><div class="form-group"><div class="row"><div class="col-md-8 col-md-offset-2"><div id="datetimepicker12"></div></div></div></div>';
             $out .= '<script>var today = new Date(); jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true, locale: "es", minDate: today });</script>';
-            $out .= '<input type="hidden" id="fecha_servicio" name="Pedido[fecha_para_servicio]" class="datepickerinput" >';
+            $out .= '<input type="hidden" id="fecha_servicio" name="fecha_para_servicio" class="datepickerinput" >';
             $out .= '</div>';
             $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
             $out .= '<h2><center>Datos de Servicio</center></h2>';
