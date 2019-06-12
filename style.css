@@ -623,20 +623,19 @@ hr {
 	border: 0;
 	border-top: 1px solid #eeeeee;
 }
-#actual-place .content-place{
+.info-checkout .content-place{
   display: flex;
   justify-content: left;
   align-items: center;
   justify-items: center;
   height: 50px;
 }
-#actual-place i{
-  color: red;
+.info-checkout i{
     display: inline-block;
     float: left;
     position: relative;
 }
-#actual-place input{
+.info-checkout input{
   display: inline-block;
     float: left;
     position: relative;

@@ -668,7 +668,7 @@ function api_youneed_contratar(){
                 $out .= '<input type="hidden" name="latitud" id="lat-map">';
                 $out .= '<input type="hidden" name="longitud" id="lng-map">';
                 $out .= '<input type="hidden" name="direccion_completa" id="place-map">';
-                $out .= '<div class="actual-place hidden" id="actual-place">';
+                $out .= '<div class="info-checkout hidden" id="actual-place">';
                 $out .= '<label>Su ubicación: </label>';
                 $out .= '<div class="content-place">';
                 $out .= '<i class="fas fa-map-marker-alt fa-2x" style="color:red;"></i><input readonly="readonly" type="text" id="place-map-ref">';
@@ -688,6 +688,13 @@ function api_youneed_contratar(){
             $out .= '<div style="overflow:hidden;margin-bottom:35px;"><div class="form-group"><div class="row"><div class="col-md-8 col-md-offset-2"><div id="datetimepicker12"></div></div></div></div>';
             $out .= '<script>var today = new Date(); jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true, locale: "es", minDate: today });</script>';
             $out .= '<input type="hidden" id="fecha_servicio" name="fecha_para_servicio" class="datepickerinput" >';
+            $out .= '<div class="info-checkout">';
+                $out .= '<label>Fecha y Hora: </label>';
+                $out .= '<div class="content-place">';
+                $out .= '<i class="fas fa-clock fa-2x" style="color:blue;"></i><input readonly="readonly" type="text" id="time-service">';
+                $out .= '</div>';
+            $out .= '</div>';
+            
             $out .= '</div>';
             $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
             $out .= '<h2><center>Datos de Servicio</center></h2>';
