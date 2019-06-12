@@ -622,7 +622,7 @@ function api_youneed_contratar(){
         $out .= '</div>';
         $out .= '<div class="fusion-layout-column toggle-button fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
             $out .= '<label>Tipo de atención </label><br>';
-            $out .= '<input type="hidden" id="tipo_atencion" name="tipo_atencion" >';
+            $out .= '<input type="hidden" id="tipo_atencion" name="tipo_atencion" value="0">';
             $out .= '<input type="checkbox" id="tipo_atencion_toggle" checked data-toggle="toggle" data-on="Normal" data-off="Urgente" data-onstyle="success" data-offstyle="danger">';
             $out .= "<script>jQuery(function(){ jQuery('#tipo_atencion_toggle').bootstrapToggle({ size : 'sm'}) });</script>";
         $out .= '</div>';
