@@ -94,7 +94,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<script>
 		function loadServiciosFilter(){
 		
-		jQuery("#sidebar").LoadingOverlay("show", {maxSize: 70 });
+		jQuery("#widget-filtro-servicio").LoadingOverlay("show", {maxSize: 70 });
 		
 		
 		var cat = jQuery("#filtro-categoria-data").val();
@@ -108,10 +108,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 				},
 				success: function( data ) {
 					jQuery('#widget-filtro-servicio').html(data);
-					jQuery("#sidebar").LoadingOverlay("hide");
+					jQuery("#widget-filtro-servicio").LoadingOverlay("hide");
 				},
 				error: function(data){
-					jQuery("#sidebar").LoadingOverlay("hide");
+					jQuery("#widget-filtro-servicio").LoadingOverlay("hide");
 				}
 			});
 		}
