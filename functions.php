@@ -886,7 +886,7 @@ function api_youneed_filtro_servicio(){
             }
         }
     $text .= '</select>';
-    $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="document.getElementById(\'filtro-servicio\').submit();"">Filtrar</a>';
+    $text .= '<a class="ver-asociados btn-asociados btn-small" href="javascript:{}" onclick="jQuery("#asociados-youneed").LoadingOverlay("show", {maxSize: 70 }); document.getElementById(\'filtro-servicio\').submit();"">Filtrar</a>';
     $text .= '</form>';
     $text .= '</div>';
     if(!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH'])){
