@@ -641,6 +641,7 @@ hr {
     float: left;
     position: relative;
     max-width: 70%;
+    border:none;
 }
 
 /** BOOTSTRAP TOOGLE BUTTON **/
