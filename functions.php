@@ -671,7 +671,7 @@ function api_youneed_contratar(){
                 $out .= '<div class="info-checkout hidden" id="actual-place">';
                 $out .= '<label>Su ubicación: </label>';
                 $out .= '<div class="content-place">';
-                $out .= '<i class="fas fa-map-marker-alt fa-2x" style="color:red;"></i><input readonly="readonly" type="text" id="place-map-ref">';
+                $out .= '<i class="fas fa-map-marker-alt fa-2x" style="color:red;"></i><input readonly="readonly" required type="text" id="place-map-ref">';
                 $out .= '</div>';
                 $out .= '</div>';
                 $out .= '<input type="hidden" name="codigo_postal" id="postal-map">';
@@ -690,9 +690,10 @@ function api_youneed_contratar(){
             $out .= '<input type="hidden" id="fecha_servicio" name="fecha_para_servicio" class="datepickerinput" >';
             $out .= '<div class="row">';
             $out .= '<div class="info-checkout col-md-8 col-md-offset-2">';
-                $out .= '<label>Fecha y Hora: </label>';
+                $out .= '<hr>';
+                $out .= '<label>Fecha y Hora del servicio: </label>';
                 $out .= '<div class="content-place">';
-                $out .= '<i class="fas fa-clock fa-2x" style="color:blue;"></i><input readonly="readonly" type="text" id="time-service">';
+                $out .= '<i class="fas fa-clock fa-2x" style="color:blue;"></i><input readonly="readonly" required type="text" id="time-service">';
                 $out .= '</div>';
             $out .= '</div>';
             $out .= '</div>';
