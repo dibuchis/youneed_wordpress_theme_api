@@ -671,10 +671,10 @@ function api_youneed_contratar(){
                 $out .= '<div class="actual-place hidden" id="actual-place">';
                 $out .= '<label>Su ubicación: </label>';
                 $out .= '<div class="content-place">';
-                $out .= '<i class="fas fa-map-marker-alt fa-2x" style="color:red;"></i><input type="text" id="place-map-ref">';
+                $out .= '<i class="fas fa-map-marker-alt fa-2x" style="color:red;"></i><input readonly="readonly" type="text" id="place-map-ref">';
                 $out .= '</div>';
                 $out .= '</div>';
-                $out .= '<input readonly="readonly" type="hidden" name="codigo_postal" id="postal-map">';
+                $out .= '<input type="hidden" name="codigo_postal" id="postal-map">';
                 $out .= '</div>';
             $out .= '</div>';
 
