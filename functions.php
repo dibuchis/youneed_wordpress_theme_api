@@ -743,7 +743,7 @@ function api_youneed_contratar(){
 
             $out .= '<hr>';
             
-            $out .= '<a class="ver-asociados btn-asociados" onclick="contratarAsociado(event)" href="#">Contratar</a>';
+            $out .= '<a class="ver-asociados btn-asociados" id="btn-contratar" onclick="contratarAsociado(event)" href="#">Contratar</a>';
             $out .= '</div>';
             $out .= '</div>';
         
