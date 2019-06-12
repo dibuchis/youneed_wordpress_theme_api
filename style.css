@@ -623,6 +623,13 @@ hr {
 	border: 0;
 	border-top: 1px solid #eeeeee;
 }
+#actual-place .content-place{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  justify-items: center;
+  height: 50px;
+}
 
 /** BOOTSTRAP TOOGLE BUTTON **/
 
