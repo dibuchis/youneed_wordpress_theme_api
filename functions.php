@@ -688,11 +688,13 @@ function api_youneed_contratar(){
             $out .= '<div style="overflow:hidden;margin-bottom:35px;"><div class="form-group"><div class="row"><div class="col-md-8 col-md-offset-2"><div id="datetimepicker12"></div></div></div></div>';
             $out .= '<script>var today = new Date(); jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true, locale: "es", minDate: today });</script>';
             $out .= '<input type="hidden" id="fecha_servicio" name="fecha_para_servicio" class="datepickerinput" >';
-            $out .= '<div class="info-checkout">';
+            $out .= '<div class="row">';
+            $out .= '<div class="info-checkout col-md-8 col-md-offset-2">';
                 $out .= '<label>Fecha y Hora: </label>';
                 $out .= '<div class="content-place">';
                 $out .= '<i class="fas fa-clock fa-2x" style="color:blue;"></i><input readonly="readonly" type="text" id="time-service">';
                 $out .= '</div>';
+            $out .= '</div>';
             $out .= '</div>';
             
             $out .= '</div>';
