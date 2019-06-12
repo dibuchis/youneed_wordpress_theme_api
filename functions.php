@@ -620,8 +620,8 @@ function api_youneed_contratar(){
         $out .= '<option value="4">Transferencia</option>';
         $out .= '</select>';
         $out .= '</div>';
-        $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
-            $out .= '<label>Tipo de servicio </label><br>';
+        $out .= '<div class="fusion-layout-column toggle-button fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
+            $out .= '<label>Tipo de atención </label><br>';
             $out .= '<input type="checkbox" name="tipo_atencion" id="tipo_atencion" checked data-toggle="toggle" data-on="Normal" data-off="Urgente" data-onstyle="success" data-offstyle="danger">';
             $out .= "<script>jQuery(function(){ jQuery('#tipo_atencion').bootstrapToggle({ on : 1, off : 0, size : 'sm'}) });</script>";
         $out .= '</div>';
