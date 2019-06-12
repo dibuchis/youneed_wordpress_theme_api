@@ -630,6 +630,18 @@ hr {
   justify-items: center;
   height: 50px;
 }
+#actual-place i{
+  color: red;
+    display: inline-block;
+    float: left;
+    position: relative;
+}
+#actual-place input{
+  display: inline-block;
+    float: left;
+    position: relative;
+    max-width: 70%;
+}
 
 /** BOOTSTRAP TOOGLE BUTTON **/
 
