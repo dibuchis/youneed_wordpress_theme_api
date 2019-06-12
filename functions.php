@@ -876,7 +876,7 @@ function api_youneed_filtro_servicio(){
     $text .= "<h3 class='filtro-titulo'><b>Servicio</b></h3>"; 
 
     //$text .= "<span class='filtro'>" . $result->count . ($data > 1 ? " resultados" : " resultado") . "</span>";
-    $text .= '<form method="post" id="filtro-servicio" >';
+    $text .= '<form method="post" id="filtro-servicio" action="https://youneed.com.ec/servicio-asociados/">';
     $text .= '<select id="filtro-servicio-data" name="filtro-servicio" >';
     foreach($servicios as $key => $val){
             if($servicio_actual == $val->id){
