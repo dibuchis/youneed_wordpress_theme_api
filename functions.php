@@ -684,7 +684,6 @@ function api_youneed_contratar(){
             
             $out .= '<div class="fusion-builder-row fusion-row ">';
             $out .= '<div class="fusion-layout-column fusion_builder_column fusion_builder_column_1_1 fusion-builder-column-2 fusion-one-full fusion-column-first fusion-column-last 1_1" style="margin-top:0px;margin-bottom:20px;">';
-            $out .= '<hr style="overflow:hidden;margin-bottom:35px;">';
             $out .= '<h2><center>Fecha de Servicio</center></h2>';
             $out .= '<div style="overflow:hidden;margin-bottom:35px;"><div class="form-group"><div class="row"><div class="col-md-8 col-md-offset-2"><div id="datetimepicker12"></div></div></div></div>';
             $out .= '<script>var today = new Date(); jQuery("#datetimepicker12").datetimepicker({ inline: true, sideBySide: true, locale: "es", minDate: today });</script>';
