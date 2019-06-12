@@ -668,7 +668,10 @@ function api_youneed_contratar(){
                 $out .= '<input type="hidden" name="latitud" id="lat-map">';
                 $out .= '<input type="hidden" name="longitud" id="lng-map">';
                 $out .= '<input type="hidden" name="direccion_completa" id="place-map">';
-                $out .= '<input type="text" id="place-map-ref">';
+                $out .= '<div class="actual-place hidden" id="actual-place">';
+                $out .= '<label>Su ubicación: </label>';
+                $out .= '<i class="fas fa-map-marker-alt fa-2x" style="color:red;"></i><input type="text" id="place-map-ref">';
+                $out .= '</div>';
                 $out .= '<input type="hidden" name="codigo_postal" id="postal-map">';
                 $out .= '</div>';
             $out .= '</div>';
