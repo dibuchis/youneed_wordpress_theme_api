@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	
 	<script>
 	function addEvent(elm, evType, fn) {
-		// try {
+		
 			if (elm.addEventListener) {
 				elm.addEventListener(evType, fn, false);
 				return true;
@@ -32,9 +32,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 			else {
 				elm['on' + evType] = fn;
 			}
-		// } catch (error) {
-			
-		// }
     }
 
 	</script>
@@ -61,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	</script>
 	
 	<script type="text/javascript" src="https://youneed.com.ec/app/js/spin.js'; ?>" ></script>
-	<script type="text/javascript" src="https://youneed.com.ec/app/js/main.js"></script>
+	<script type="text/javascript" src="https://youneed.com.ec/app/js/main.js?v=1.3"></script>
 	
 
 	<?php
@@ -128,7 +125,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         <i class="fa fa-key"></i>
         <center><p>¿No tienes cuenta?</p></center>
         <center><a href="https://youneed.com.ec/registro_escoger/">Registrate</a></center>
-        <center><a href="#">¿Olvidaste tu contraseña?</a></center>
+        <center><a href="https://youneed.com.ec/app/requestnewpassword">¿Olvidaste tu contraseña?</a></center>
         <button>
           <i class="spinner"></i>
           <span class="state">Ingresar</span>
@@ -180,6 +177,7 @@ if ( 'modern' === Avada()->settings->get( 'mobile_menu_design' ) ) {
     })(jQuery);
 </script>
 <body <?php body_class(); ?>>
+	<div id="wptime-plugin-preloader"></div>
 
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'Avada' ); ?></a>
 	<?php

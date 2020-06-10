@@ -177,16 +177,37 @@ footer a, footer a:link {
 }
 
 .user-menu{
-    display: block;
+	display: block;
     position: absolute;
     width: 293px;
-    height: 140px;
-    right: 65px;
+    /* height: 140px; */
+    right: 0px;
     z-index: 9000;
     background: #fff;
     padding: 25px 20px;
     border-radius: 5px;
     border: 1px solid #dedede;
+    left: auto;
+}
+#shopping-cart-menu .user-menu{
+  text-align:right;
+}
+#shopping-cart-menu .sub-menu, #app-user-menu .sub-menu,
+#shopping-cart-menu .user-menu, #app-user-menu .user-menu{
+  left:auto !important;
+  right:-5px !important;
+  position:absolute;
+  display:block !important;
+}
+#app-user-menu .sub-menu{
+  left:auto !important;
+  right:0px !important;
+  position:absolute;
+  display:block !important;
+}
+#shopping-cart-menu .user-menu .right-panel{
+  width:100% ;
+  font-size:14px;
 }
 span.user-name {
     margin-left: 5px;
@@ -252,6 +273,13 @@ span.user-name {
     margin:35px;
     max-width:1000px;
     margin:0 auto;
+}
+div#servicios-youneed {
+    display: grid;
+    grid-column-end: 5;
+    grid-column-start: 1;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 360px;
 }
 .cat-text {
     font-size: 0.8em;
@@ -430,10 +458,10 @@ padding:20px;
   width:10%;
 }
 .checkout-table tbody tr td:nth-child(2){
-  width:10%;
+  width:70%;
 }
 .checkout-table tbody tr td:nth-child(3){
-  width:80%;
+  width:20%;
   text-align: left;
 }
 
@@ -582,17 +610,48 @@ input.btn-asociados {
   }
 }
 
+/** GRID CHECKOUT **/
+#checkout-detalles{
+  display:grid !important;
+  grid-template-columns:25% 25%;
+  grid-template-rows:120px;
+  grid-template-areas:
+    "atencion pago ubicacion"
+    "fecha fecha ubicacion";
+
+}
+#checkout-detalles > div{
+  border-radius:5px;
+  border:1px solid #eee;
+  padding:15px;
+  margin :5px;
+}
+
+#checkout-meta-atencion{
+  grid-area: atencion;
+}
+#checkout-meta-fecha{
+  grid-area: fecha;
+}
+#checkout-meta-ubicacion{
+  grid-area: ubicacion;
+}
+#checkout-meta-pago{
+  grid-area: pago;
+}
+
 /** GOOGLE MAPS **/
 
 .map-wrapper{
-  width:678px;
+  width:100%;
   display:block;
   position:relative;
   margin:0px auto;
 }
 #map{
-  width:678px;
-  height:420px;
+ /* width:678px;*/
+	width:100%;
+  height:320px;
 }
 #pac-input{
   display:block;
@@ -1324,4 +1383,22 @@ hr {
       max-width:320px;
       height:320px;
   }
+}
+
+.login button{
+	outline-color: transparent !important;
+}
+
+.login button i{
+	outline-color: transparent !important;
+}
+
+.login:not(.loading) button:hover {
+	outline-color: transparent !important;
+}
+.login button .spinner {
+    outline-color: transparent !important;
+}
+.login.loading button .spinner {
+    outline-color: transparent !important;
 }

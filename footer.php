@@ -74,9 +74,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php wp_footer(); ?>
 	</body>
 <script>
-	jQuery(document).ready(function(){
-		// try {
-		
+	document.addEventListener('readystatechange', event => {
+		if (event.target.readyState === "complete") {
 			var elLog = document.querySelector("a[title='login']");
 			
 			addEvent(elLog, "click", function(event){
@@ -89,25 +88,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 				}
 				return false;
 			});
-		
-		// } catch (error) {
-			
-		// }
-
+		}
 	});
 		
 	
     
-        jQuery("#yn-login").click(function(event){ 
-            if(event.target.id=="yn-login"){
-                if(jQuery("#yn-login").hasClass("yn-login")){  
-                    jQuery("#yn-login").removeClass("yn-login");
-                } 
-            }
-        });
+	jQuery("#yn-login").click(function(event){ 
+		if(event.target.id=="yn-login"){
+			if(jQuery("#yn-login").hasClass("yn-login")){  
+				jQuery("#yn-login").removeClass("yn-login");
+			} 
+		}
+	});
 </script>
 
 
-<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>-Child-Theme/lib/main.js?v=1.15"></script>
 
 </html>
